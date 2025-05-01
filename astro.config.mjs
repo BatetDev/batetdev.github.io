@@ -6,7 +6,7 @@ import siteConfig from './src/data/site-config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: batetdev.github.io,
+    site: 'https://batetdev.github.io',
     vite: {
         plugins: [tailwindcss()]
     },
