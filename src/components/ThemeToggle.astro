@@ -2,9 +2,10 @@
 // filepath: c:\Users\Joaquin\Desktop\000-own-projects-repos\batetdev.github.io\src\components\ThemeToggle.astro
 import { Sun, Moon } from '@lucide/astro';
 
-// Helper to determine initial theme (for SSR/hydration)
 let theme = 'dark';
+
 if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-undef
   theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 }
 ---
@@ -24,10 +25,14 @@ if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
 
         function updateIcons() {
             if (isDark()) {
+                // @ts-ignore
                 sun.style.display = 'block';
+                // @ts-ignore
                 moon.style.display = 'none';
             } else {
+                // @ts-ignore
                 sun.style.display = 'none';
+                // @ts-ignoree';
                 moon.style.display = 'block';
             }
         }
@@ -42,9 +47,7 @@ if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
             updateIcons();
         });
     });
-</script>
 
-<script>
     document.addEventListener('astro:after-swap', () => {
         if (localStorage.theme === 'dark') {
             document.documentElement.classList.add('dark');

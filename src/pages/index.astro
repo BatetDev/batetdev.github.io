@@ -7,7 +7,6 @@ import PostPreview from '../components/PostPreview.astro';
 import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
 import { sortItemsByDateDesc } from '../utils/data-utils';
-import { Pickaxe } from '@lucide/astro';
 
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
@@ -18,7 +17,6 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
     <Hero />
-    <Pickaxe class="w-8 h-8 text-red-500"/>
     {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
