@@ -1,6 +1,7 @@
+@import '@fontsource/fira-sans' layer(base);
 @import '@fontsource/fira-code' layer(base);
-@import '@fontsource/source-sans-pro' layer(base);
-@import '@fontsource/source-serif-pro' layer(base);
+@import '@fontsource/orbitron' layer(base);
+@import '@fontsource/russo-one' layer(base);
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
@@ -60,9 +61,10 @@ html.dark {
 */
 
 @theme inline {
-  --font-sans: 'Source Sans Pro', 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  --font-serif: 'Source Serif Pro', 'Source Serif Pro', serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-heading: 'Orbitron', Arial, Helvetica, sans-serif;
+  --font-body: 'Fira Sans', Arial, Helvetica, sans-serif;
+  --font-accent: 'Russo One', Arial, Helvetica, sans-serif;
+  --font-code: 'Fira Code', 'Fira Mono', 'Consolas', monospace;
   --text-color-main: var(--text-main);
   --background-color-main: var(--bg-main);
   --background-color-muted: var(--bg-muted);

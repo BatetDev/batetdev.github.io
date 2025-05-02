@@ -4,9 +4,10 @@ import siteConfig from '../data/site-config';
 import '../styles/global.css';
 
 // Preload main font files (adjust weights/styles as needed)
+import orbitronWoff2 from '@fontsource/orbitron/files/orbitron-latin-400-normal.woff2?url';
+import firaSansWoff2 from '@fontsource/fira-sans/files/fira-sans-latin-400-normal.woff2?url';
+import russoOneWoff2 from '@fontsource/russo-one/files/russo-one-latin-400-normal.woff2?url';
 import firaCodeWoff2 from '@fontsource/fira-code/files/fira-code-latin-400-normal.woff2?url';
-import sourceSansProWoff2 from '@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff2?url';
-import sourceSerifProWoff2 from '@fontsource/source-serif-pro/files/source-serif-pro-latin-400-normal.woff2?url';
 
 export type Props = {
     title?: string;
@@ -44,9 +45,10 @@ function formatCanonicalURL(url: string | URL) {
 <meta name="generator" content={Astro.generator} />
 
 <!-- Fonts: Preload your main font(s) -->
+<link rel="preload" as="font" type="font/woff2" href={orbitronWoff2} crossorigin="anonymous" />
+<link rel="preload" as="font" type="font/woff2" href={firaSansWoff2} crossorigin="anonymous" />
+<link rel="preload" as="font" type="font/woff2" href={russoOneWoff2} crossorigin="anonymous" />
 <link rel="preload" as="font" type="font/woff2" href={firaCodeWoff2} crossorigin="anonymous" />
-<link rel="preload" as="font" type="font/woff2" href={sourceSansProWoff2} crossorigin="anonymous" />
-<link rel="preload" as="font" type="font/woff2" href={sourceSerifProWoff2} crossorigin="anonymous" />
 
 <!-- Low Priority Global Metadata -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
