@@ -95,7 +95,7 @@ html.dark {
   }
 
   .prose :where(h1, h2, h3, h4, h5, h6) {
-    @apply font-serif font-medium;
+    @apply font-heading font-medium;
   }
 
   .prose :where(code, strong) {
@@ -103,6 +103,6 @@ html.dark {
   }
 
   .prose blockquote {
-    @apply font-serif font-normal border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
+    @apply font-heading font-normal border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
   }
 }
