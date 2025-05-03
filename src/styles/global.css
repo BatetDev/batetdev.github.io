@@ -74,6 +74,10 @@ pre {
 
 /* === Tailwind Typography Plugin Customization === */
 @layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
   .prose {
     --tw-prose-body: var(--text-main);
     --tw-prose-headings: var(--text-main);
