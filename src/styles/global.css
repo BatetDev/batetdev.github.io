@@ -78,6 +78,18 @@ pre {
     font-family: var(--font-heading);
   }
 
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+
+  .font-code {
+    font-family: var(--font-code);
+  }
+
   .prose {
     --tw-prose-body: var(--text-main);
     --tw-prose-headings: var(--text-main);
