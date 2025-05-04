@@ -7,12 +7,15 @@ type Props = { project: CollectionEntry<'projects'>; class?: string; headingLeve
 const { project, class: className, headingLevel = 'h2' } = Astro.props;
 const { title, description } = project.data;
 const TitleTag = headingLevel;
+
+const previewClasses = 'flex justify-between items-start gap-8 group';
+const innerClasses = 'grow relative bg-gray-900/20 backdrop-blur-sm border borde-emerald-400/50 rounded-lg p-6 shadow-md shadow-emerald-400/30 transition-all duration-300 hover:shadow-emerald-400/50'
 ---
 
-<a class:list={['flex justify-between items-start gap-8 group', className]} href={`/projects/${project.id}/`}>
-    <div class="grow glow-border p-3 rounded-md bg-zinc-950/60">
+<a class:list={[previewClasses, className]} href={`/projects/${project.id}/`}>
+    <div class={innerClasses}>
         <TitleTag
-            class="text-xl leading-tight font-body font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
+            class="text-xl leading-tight font-body font-medium sm:text-2xl"
         >
             {title}
         </TitleTag>
