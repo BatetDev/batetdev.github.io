@@ -68,8 +68,8 @@ pre {
 }
 
 .glow-border {
-  border: 2px solid rgba(0, 212, 146, 0.6);
-  box-shadow: 0 0 8px rgba(0, 212, 146, 0.6);
+  border: 2px solid rgba(0, 212, 146, 0.5);
+  box-shadow: 0 0 8px rgba(0, 212, 146, 0.5);
 }
 
 /* === Tailwind Typography Plugin Customization === */
