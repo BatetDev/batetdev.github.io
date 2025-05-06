@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry } from 'astro:content';
-import ArrowRight from '../icons/ArrowRight.astro';
 
 type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
 
@@ -9,19 +8,15 @@ const { title, description } = project.data;
 const TitleTag = headingLevel;
 
 const previewClasses = 'flex justify-between items-start gap-8 group';
-const innerClasses = 'grow relative bg-gray-900/20 backdrop-blur-sm border borde-emerald-400/50 rounded-lg p-6 shadow-md shadow-emerald-400/30 transition-all duration-300 hover:shadow-emerald-400/50'
+const innerClasses =
+  'grow relative bg-gray-900/20 backdrop-blur-sm border borde-emerald-400/50 rounded-lg p-6 shadow-md shadow-emerald-400/30 transition-all duration-300 hover:shadow-emerald-400/50';
 ---
 
 <a class:list={[previewClasses, className]} href={`/projects/${project.id}/`}>
-    <div class={innerClasses}>
-        <TitleTag
-            class="text-xl leading-tight font-body font-medium sm:text-2xl"
-        >
-            {title}
-        </TitleTag>
-        {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
-    </div>
-    <div class="hidden font-body opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
-        View Project <ArrowRight class="fill-current w-4 h-4" />
-    </div>
+  <div class={innerClasses}>
+    <TitleTag class="text-xl leading-tight font-body font-medium sm:text-2xl">
+      {title}
+    </TitleTag>
+    {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
+  </div>
 </a>
