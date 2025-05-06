@@ -88,10 +88,6 @@ const siteConfig: SiteConfig = {
       text: 'LinkedIn',
       href: 'https://www.linkedin.com/in/francisco-batet-ab7274298/',
     },
-    {
-      text: 'X/Twitter',
-      href: 'https://twitter.com/',
-    },
   ],
   hero: {
     title: '$ npm run introduce',

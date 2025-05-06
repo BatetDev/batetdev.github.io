@@ -1,5 +1,11 @@
 ---
 import siteConfig from '../data/site-config';
+import { Github, Linkedin } from '@lucide/astro';
+
+const iconMap = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+} as const;
 
 const socialLinks = siteConfig.socialLinks || [];
 const navLinks = siteConfig.footerNavLinks || [];
@@ -22,16 +28,20 @@ const navLinks = siteConfig.footerNavLinks || [];
       {
         socialLinks.length > 0 && (
           <div class="flex flex-wrap gap-x-6 gap-y-1 justify-center">
-            {socialLinks.map((link) => (
-              <a
-                class="inline-flex items-center justify-center text-sm text-gray-300 hover:text-emerald-400 transition"
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.text}
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              const Icon = iconMap[link.text as keyof typeof iconMap];
+              return (
+                <a
+                  class="inline-flex items-center justify-center text-sm text-gray-300 hover:text-emerald-400 transition"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={link.text}
+                >
+                  {Icon ? <Icon class="w-5 h-5" /> : link.text}
+                </a>
+              );
+            })}
           </div>
         )
       }
