@@ -5,11 +5,11 @@ const socialLinks = siteConfig.socialLinks || [];
 const navLinks = siteConfig.footerNavLinks || [];
 ---
 
-<footer class="w-full bg-zinc-950/95 border-t border-emerald-400/50 py-4 mt-6">
+<footer class="w-full bg-zinc-950/95 border-t-2 border-emerald-400/50 py-4 mt-6">
   <div class="max-w-3xl mx-auto px-4 sm:px-6">
     {
       navLinks.length > 0 && (
-        <div class="mb-6 flex flex-wrap gap-x-6 gap-y-2">
+        <div class="mb-6 flex flex-wrap gap-x-6 gap-y-2 justify-center">
           {navLinks.map((link) => (
             <a class="text-gray-300 hover:text-emerald-400 transition font-body" href={link.href}>
               {link.text}
@@ -18,10 +18,10 @@ const navLinks = siteConfig.footerNavLinks || [];
         </div>
       )
     }
-    <div class="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
+    <div class="flex flex-col gap-5 sm:flex-row sm:justify-between sm:items-center">
       {
         socialLinks.length > 0 && (
-          <div class="flex flex-wrap gap-x-4 gap-y-1">
+          <div class="flex flex-wrap gap-x-6 gap-y-1 justify-center">
             {socialLinks.map((link) => (
               <a
                 class="inline-flex items-center justify-center text-sm text-gray-300 hover:text-emerald-400 transition"
