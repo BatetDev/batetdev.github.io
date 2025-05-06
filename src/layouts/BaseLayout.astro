@@ -25,15 +25,17 @@ const { showHeader = true, ...head } = Astro.props;
     <!-- Nav -->
     <Nav />
 
-    <!-- Optional Header -->
-    {showHeader && <Header />}
+    <div class="px-3 md:px-4">
+      <!-- Optional Header -->
+      {showHeader && <Header />}
 
-    <!-- Main Content -->
-    <main class="flex flex-col min-h-screen px-3 md:px-4">
-      <div class="grow w-full max-w-3xl mx-auto bg-zinc-950/95 px-4 py-6 rounded-lg glow-border">
-        <slot />
-      </div>
-    </main>
+      <!-- Main Content -->
+      <main class="flex flex-col min-h-screen">
+        <div class="grow w-full max-w-3xl mx-auto bg-zinc-950/95 px-4 py-6 rounded-lg glow-border">
+          <slot />
+        </div>
+      </main>
+    </div>
 
     <!-- Footer -->
     <Footer />
