@@ -3,28 +3,50 @@ import NavLink from './NavLink.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import siteConfig from '../data/site-config';
 
+// Import Lucide icons
+import { Menu, X } from '@lucide/astro';
+
 const navLinks = siteConfig.headerNavLinks || [];
 ---
 
-<nav class="min-h-10 pt-4 pb-6 relative sm:min-h-14 sm:pb-24 md:pt-8 bg-zinc-950/95 mb-6">
+<nav class="min-h-10 pt-4 pb-6 px-4 relative sm:min-h-14 sm:pb-24 md:pt-8 bg-zinc-950/95 mb-6">
   {
     navLinks.length > 0 && (
       <div class="w-full max-w-3xl mx-auto relative">
+        <!-- Toggle Button -->
         <button
-          class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-30 md:hidden"
+          class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-40 md:hidden"
           aria-label="Open Menu"
           aria-expanded="false"
           aria-controls="menu-items"
         >
-          <span class="menu-toggle-icon w-6 h-px relative bg-current" />
+          <!-- Dynamic Icon -->
+          <span class="menu-icon-open">
+            <Menu class="w-6 h-6 text-gray-200" />
+          </span>
+          <span class="menu-icon-close hidden">
+            <X class="w-6 h-6 text-gray-200" />
+          </span>
         </button>
+
+        <!-- Overlay -->
+        <div class="menu-overlay fixed inset-0 bg-black/60 z-30 hidden md:hidden"></div>
+
+        <!-- Menu Items -->
         <ul
           id="menu-items"
-          class="menu flex gap-6 max-md:flex-col max-md:gap-1 max-md:absolute max-md:-top-2.5 max-md:-left-2.5 max-md:max-w-64 max-md:px-3 max-md:pt-16 max-md:pb-10 max-md:z-20 max-md:bg-main max-md:border max-md:border-dashed max-md:border-main"
+          class="menu list-none hidden md:flex gap-6 justify-start items-center text-gray-200
+                 max-[767px]:flex-col max-[767px]:gap-6 max-[767px]:fixed max-[767px]:inset-0 
+                 max-[767px]:justify-center max-[767px]:items-center max-[767px]:bg-zinc-950/95 
+                 max-[767px]:z-20 max-[767px]:w-full max-[767px]:h-full max-[767px]:px-8 max-[767px]:py-16
+                 max-[767px]:transition-all max-[767px]:duration-300 max-[767px]:opacity-0 max-[767px]:pointer-events-none"
         >
           {navLinks.map((link) => (
-            <li class="py-1">
-              <NavLink class="text-xl font-accent text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href={link.href}>
+            <li class="py-2">
+              <NavLink
+                class="text-xl font-accent text-gray-200 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2 transition-colors duration-200"
+                href={link.href}
+              >
                 {link.text}
               </NavLink>
             </li>
@@ -33,7 +55,7 @@ const navLinks = siteConfig.headerNavLinks || [];
       </div>
     )
   }
-  <div class="absolute right-0 top-4 z-10 md:top-8">
+  <div class="absolute right-0 top-4 z-40 md:top-8">
     <ThemeToggle />
   </div>
 </nav>
@@ -43,46 +65,19 @@ const navLinks = siteConfig.headerNavLinks || [];
 
   @media (max-width: 767px) {
     .menu {
-      @apply invisible opacity-0;
-      width: calc(100% + 1.25rem);
+      opacity: 0;
+      pointer-events: none;
     }
     .menu.is-visible {
-      @apply visible opacity-100;
-      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .menu-toggle-icon {
-      transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    .menu-overlay {
+      display: none;
     }
-    .menu-toggle.is-active .menu-toggle-icon {
-      @apply w-0;
-      transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .menu-toggle-icon:before,
-    .menu-toggle-icon:after {
-      @apply w-6 h-px absolute left-1/2 top-0 origin-center -translate-x-1/2 bg-current;
-      content: '';
-      transition:
-        rotate 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-        margin 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
-    }
-    .menu-toggle-icon:before {
-      @apply -mt-1.5;
-    }
-    .menu-toggle-icon:after {
-      @apply mt-1.5;
-    }
-    .menu-toggle.is-active .menu-toggle-icon:before,
-    .menu-toggle.is-active .menu-toggle-icon:after {
-      @apply mt-0;
-      transition:
-        margin 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
-        rotate 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-    }
-    .menu-toggle.is-active .menu-toggle-icon:before {
-      @apply rotate-45;
-    }
-    .menu-toggle.is-active .menu-toggle-icon:after {
-      @apply -rotate-45;
+    .menu.is-visible ~ .menu-overlay {
+      display: block;
     }
   }
 </style>
@@ -91,12 +86,44 @@ const navLinks = siteConfig.headerNavLinks || [];
   function menuToggle() {
     const menu = document.querySelector('.menu');
     const menuToggleBtn = document.querySelector('.menu-toggle');
+    const overlay = document.querySelector('.menu-overlay');
+    const menuIconOpen = document.querySelector('.menu-icon-open');
+    const menuIconClose = document.querySelector('.menu-icon-close');
+
+    function closeMenu() {
+      menuToggleBtn.classList.remove('is-active');
+      menuToggleBtn.setAttribute('aria-expanded', 'false');
+      menuToggleBtn.setAttribute('aria-label', 'Open Menu');
+      menu.classList.remove('is-visible');
+      menu.classList.add('hidden'); // <-- Ensure menu is hidden
+      overlay.classList.add('hidden');
+      menuIconOpen.classList.remove('hidden');
+      menuIconClose.classList.add('hidden');
+    }
+
     menuToggleBtn?.addEventListener('click', () => {
       const isMenuExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
-      menuToggleBtn.classList.toggle('is-active');
-      menuToggleBtn.setAttribute('aria-expanded', isMenuExpanded ? 'false' : 'true');
-      menuToggleBtn.setAttribute('aria-label', isMenuExpanded ? 'Open Menu' : 'Close Menu');
-      menu?.classList.toggle('is-visible');
+      if (isMenuExpanded) {
+        closeMenu();
+      } else {
+        menuToggleBtn.classList.add('is-active');
+        menuToggleBtn.setAttribute('aria-expanded', 'true');
+        menuToggleBtn.setAttribute('aria-label', 'Close Menu');
+        menu.classList.add('is-visible');
+        menu.classList.remove('hidden'); // <-- Ensure menu is visible
+        overlay.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      }
+    });
+
+    overlay?.addEventListener('click', closeMenu);
+
+    // Optional: close menu when a nav link is clicked (mobile only)
+    document.querySelectorAll('.menu li a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) closeMenu();
+      });
     });
   }
   menuToggle();
