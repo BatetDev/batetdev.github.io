@@ -9,48 +9,47 @@ if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
   theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 }
 ---
-<button id="theme-toggle" class="w-8 h-8 -mr-2 flex items-center justify-center cursor-pointer" aria-label="Change color scheme">
-    <Sun id="icon-sun" class="w-5 h-5 hidden" />
-    <Moon id="icon-moon" class="w-5 h-5 hidden" />
+
+<button id="theme-toggle" class="w-8 h-8 flex items-center justify-center cursor-pointer" aria-label="Change color scheme">
+  <Sun id="icon-sun" class="w-5 h-5 hidden" />
+  <Moon id="icon-moon" class="w-5 h-5 hidden" />
 </button>
 
 <script>
-    document.addEventListener('astro:page-load', () => {
-        const sun = document.getElementById('icon-sun');
-        const moon = document.getElementById('icon-moon');
-        const button = document.getElementById('theme-toggle');
-        const isDark = () =>
-            document.documentElement.classList.contains('dark') ||
-            (localStorage.theme === 'dark');
+  document.addEventListener('astro:page-load', () => {
+    const sun = document.getElementById('icon-sun');
+    const moon = document.getElementById('icon-moon');
+    const button = document.getElementById('theme-toggle');
+    const isDark = () => document.documentElement.classList.contains('dark') || localStorage.theme === 'dark';
 
-        function updateIcons() {
-            if (isDark()) {
-                // @ts-ignore
-                sun.style.display = 'block';
-                // @ts-ignore
-                moon.style.display = 'none';
-            } else {
-                // @ts-ignore
-                sun.style.display = 'none';
-                // @ts-ignoree';
-                moon.style.display = 'block';
-            }
-        }
+    function updateIcons() {
+      if (isDark()) {
+        // @ts-ignore
+        sun.style.display = 'block';
+        // @ts-ignore
+        moon.style.display = 'none';
+      } else {
+        // @ts-ignore
+        sun.style.display = 'none';
+        // @ts-ignoree';
+        moon.style.display = 'block';
+      }
+    }
 
-        // Initial icon state
-        updateIcons();
+    // Initial icon state
+    updateIcons();
 
-        button?.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            const nowDark = document.documentElement.classList.contains('dark');
-            localStorage.setItem('theme', nowDark ? 'dark' : 'light');
-            updateIcons();
-        });
+    button?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const nowDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+      updateIcons();
     });
+  });
 
-    document.addEventListener('astro:after-swap', () => {
-        if (localStorage.theme === 'dark') {
-            document.documentElement.classList.add('dark');
-        }
-    });
+  document.addEventListener('astro:after-swap', () => {
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  });
 </script>
