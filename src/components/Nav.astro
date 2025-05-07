@@ -7,13 +7,18 @@ import { Menu, X } from '@lucide/astro';
 const navLinks = siteConfig.headerNavLinks || [];
 ---
 
-<nav class="w-full min-h-10 pt-4 pb-6 relative sm:min-h-14 sm:pb-24 md:pt-8 bg-zinc-950/95 mb-6">
+<nav class="w-full min-h-14 p-4 relative md:p-6 bg-zinc-950/95 mb-6">
   {
     navLinks.length > 0 && (
       <div class="w-full md:max-w-3xl md:mx-auto relative px-4">
+          <!-- TODO: Change Theme Toggle with Language toggle -->
+          <div class="absolute right-0 top-4 z-40 md:top-8 hidden">
+            <ThemeToggle />
+          </div>
+
         <!-- Toggle Button -->
         <button
-          class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-50 md:hidden"
+          class="menu-toggle cursor-pointer w-8 h-8 absolute right-0 top-0 flex items-center justify-center z-50 md:hidden"
           aria-label="Open Menu"
           aria-expanded="false"
           aria-controls="menu-items"
@@ -29,7 +34,6 @@ const navLinks = siteConfig.headerNavLinks || [];
         <!-- Overlay -->
 <div class="menu-overlay fixed inset-0 bg-black/40 z-30 md:hidden opacity-0 pointer-events-none transition-all duration-200 ease-in-out"></div>
 
-        <!-- Menu Items -->
         <!-- Menu Items -->
         <ul
   id="menu-items"
@@ -54,9 +58,7 @@ const navLinks = siteConfig.headerNavLinks || [];
       </div>
     )
   }
-  <div class="absolute right-0 top-4 z-40 md:top-8">
-    <ThemeToggle />
-  </div>
+
 </nav>
 
 <style>
