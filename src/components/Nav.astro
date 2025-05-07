@@ -2,8 +2,6 @@
 import NavLink from './NavLink.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import siteConfig from '../data/site-config';
-
-// Import Lucide icons
 import { Menu, X } from '@lucide/astro';
 
 const navLinks = siteConfig.headerNavLinks || [];
@@ -15,43 +13,44 @@ const navLinks = siteConfig.headerNavLinks || [];
       <div class="w-full md:max-w-3xl md:mx-auto relative px-4">
         <!-- Toggle Button -->
         <button
-          class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-40 md:hidden"
+          class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-50 md:hidden"
           aria-label="Open Menu"
           aria-expanded="false"
           aria-controls="menu-items"
         >
-          <!-- Dynamic Icon -->
-          <span class="menu-icon-open">
+          <span class="menu-icon-open absolute inset-0 flex items-center justify-center transition-all duration-200 ease-in-out">
             <Menu class="w-6 h-6 text-gray-200" />
           </span>
-          <span class="menu-icon-close hidden">
+          <span class="menu-icon-close absolute inset-0 flex items-center justify-center transition-all duration-200 ease-in-out">
             <X class="w-6 h-6 text-gray-200" />
           </span>
         </button>
 
         <!-- Overlay -->
-        <div class="menu-overlay fixed inset-0 bg-black/60 z-30 hidden md:hidden"></div>
+<div class="menu-overlay fixed inset-0 bg-black/40 z-30 md:hidden opacity-0 pointer-events-none transition-all duration-200 ease-in-out"></div>
 
         <!-- Menu Items -->
+        <!-- Menu Items -->
         <ul
-          id="menu-items"
-          class="menu list-none hidden md:flex gap-6 justify-start items-center text-gray-200
-                 max-[767px]:flex-col max-[767px]:gap-6 max-[767px]:fixed max-[767px]:inset-0 
-                 max-[767px]:justify-center max-[767px]:items-center max-[767px]:bg-zinc-950/95 
-                 max-[767px]:z-20 max-[767px]:w-screen max-[767px]:h-full max-[767px]:px-8 max-[767px]:py-16
-                 max-[767px]:transition-all max-[767px]:duration-300 max-[767px]:opacity-0 max-[767px]:pointer-events-none"
-        >
-          {navLinks.map((link) => (
-            <li class="py-2">
-              <NavLink
-                class="text-xl font-accent text-gray-200 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2 transition-colors duration-200"
-                href={link.href}
-              >
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+  id="menu-items"
+  class="menu list-none md:flex gap-6 justify-start items-center text-gray-200
+         max-[767px]:flex max-[767px]:flex-col max-[767px]:gap-6 max-[767px]:fixed max-[767px]:inset-0 
+         max-[767px]:justify-center max-[767px]:items-center max-[767px]:bg-zinc-950/95 
+         max-[767px]:z-40 max-[767px]:w-screen max-[767px]:h-full max-[767px]:px-8 max-[767px]:py-16
+         max-[767px]:transition-all max-[767px]:duration-200 max-[767px]:ease-in-out
+         max-[767px]:opacity-0 max-[767px]:pointer-events-none"
+>
+  {navLinks.map((link) => (
+    <li class="py-2">
+      <NavLink
+        href={link.href}
+        class="text-xl font-accent text-gray-200 cursor-pointer transition-colors duration-200 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2"
+      >
+        {link.text}
+      </NavLink>
+    </li>
+  ))}
+</ul>
       </div>
     )
   }
@@ -67,17 +66,39 @@ const navLinks = siteConfig.headerNavLinks || [];
     .menu {
       opacity: 0;
       pointer-events: none;
+      transform: translateY(-1rem);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .menu.is-visible {
       opacity: 1;
       pointer-events: auto;
-      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
     }
     .menu-overlay {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .menu.is-visible ~ .menu-overlay {
-      display: block;
+    .menu-overlay.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    /* Icon transitions */
+    .menu-icon-open {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+    .menu-icon-close {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+    .menu-toggle.is-active .menu-icon-open {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+    .menu-toggle.is-active .menu-icon-close {
+      opacity: 1;
+      transform: rotate(0deg);
     }
   }
 </style>
@@ -87,18 +108,13 @@ const navLinks = siteConfig.headerNavLinks || [];
     const menu = document.querySelector('.menu');
     const menuToggleBtn = document.querySelector('.menu-toggle');
     const overlay = document.querySelector('.menu-overlay');
-    const menuIconOpen = document.querySelector('.menu-icon-open');
-    const menuIconClose = document.querySelector('.menu-icon-close');
 
     function closeMenu() {
       menuToggleBtn.classList.remove('is-active');
       menuToggleBtn.setAttribute('aria-expanded', 'false');
       menuToggleBtn.setAttribute('aria-label', 'Open Menu');
       menu.classList.remove('is-visible');
-      menu.classList.add('hidden');
-      overlay.classList.add('hidden');
-      menuIconOpen.classList.remove('hidden');
-      menuIconClose.classList.add('hidden');
+      overlay.classList.remove('is-visible');
     }
 
     menuToggleBtn?.addEventListener('click', () => {
@@ -110,16 +126,13 @@ const navLinks = siteConfig.headerNavLinks || [];
         menuToggleBtn.setAttribute('aria-expanded', 'true');
         menuToggleBtn.setAttribute('aria-label', 'Close Menu');
         menu.classList.add('is-visible');
-        menu.classList.remove('hidden');
-        overlay.classList.remove('hidden');
-        menuIconOpen.classList.add('hidden');
-        menuIconClose.classList.remove('hidden');
+        overlay.classList.add('is-visible');
       }
     });
 
     overlay?.addEventListener('click', closeMenu);
 
-    // Optional: close menu when a nav link is clicked (mobile only)
+    // Close menu when a nav link is clicked (mobile only)
     document.querySelectorAll('.menu li a').forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth < 768) closeMenu();
