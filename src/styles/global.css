@@ -116,7 +116,7 @@ pre {
 
   .prose blockquote {
     font-family: var(--font-heading);
-    @apply font-normal border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
+    @apply font-normal border-none pl-0 text-[1.375em] leading-snug;
   }
 
   .prose code {

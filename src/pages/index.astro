@@ -19,8 +19,8 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
   <Hero />
   {
     featuredProjects?.length > 0 && (
-      <div class="mb-8">
-        <h2 class="mb-12 text-3xl font-heading font-bold tracking-wider">Projects</h2>
+      <div class="mb-14">
+        <h2 class="mb-10 text-3xl font-heading font-bold tracking-wider">Projects</h2>
         {featuredProjects.map((project) => (
           <ProjectPreview project={project} class="mb-10" headingLevel="h3" />
         ))}
@@ -32,12 +32,12 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
   }
   {
     featuredPosts?.length > 0 && (
-      <div class="mb-8">
-        <h2 class="mb-12 font-heading font-bold tracking-wider  text-3xl">Writing</h2>
+      <div class="mb-4">
+        <h2 class="mb-10 font-heading font-bold tracking-wider text-3xl">Writing</h2>
         {featuredPosts.map((post) => (
           <PostPreview post={post} class="mb-10" headingLevel="h3" />
         ))}
-        <div class="mt-12">
+        <div class="mt-10">
           <Button href="/blog">View All Posts</Button>
         </div>
       </div>
