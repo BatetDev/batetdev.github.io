@@ -106,7 +106,7 @@ pre {
   }
 
   .prose a {
-    @apply underline font-normal decoration-1 underline-offset-2 decoration-dashed hover:decoration-solid;
+    @apply underline font-medium decoration-2 underline-offset-2 hover:decoration-slice hover:text-emerald-300 hover:underline-offset-4 transition-all;
   }
 
   .prose :where(h1, h2, h3, h4, h5, h6) {
