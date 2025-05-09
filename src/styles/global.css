@@ -97,6 +97,7 @@ pre {
     --tw-prose-bold: var(--text-main);
     --tw-prose-bullets: var(--text-main);
     --tw-prose-hr: var(--border-main);
+    --tw-prose-quotes: var(--text-main);
     --tw-prose-quote-borders: var(--border-main);
     --tw-prose-captions: var(--text-main);
     --tw-prose-kbd: var(--text-main);
@@ -115,11 +116,10 @@ pre {
   }
 
   .prose blockquote {
-    font-family: var(--font-heading);
-    @apply font-normal border-none pl-0 text-[1.375em] leading-snug;
+    @apply font-normal text-green-300 border-1 text-lg leading-6 rounded-md bg-gray-950/90 px-3 py-0.5;
   }
 
   .prose code {
-    @apply bg-gray-800/80 text-green-400 px-1 py-0.5 rounded-md;
+    @apply font-normal text-green-300 border-1 text-lg leading-6 rounded-md bg-gray-950/90 px-3 py-0.5;
   }
 }
