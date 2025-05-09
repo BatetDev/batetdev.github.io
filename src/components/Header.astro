@@ -2,17 +2,17 @@
 import siteConfig from '../data/site-config';
 ---
 
-<header class="max-w-3xl mx-auto mb-8 sm:mb-12 mt-2 px-3 md:px-4 py-6 bg-zinc-950/95 text-center rounded-lg glow-border">
+<header class="w-full max-w-3xl mx-auto mb-6 mt-3 px-3 py-6 bg-zinc-950/95 text-center rounded-lg glow-border">
   {
     siteConfig.logo && siteConfig.logo?.src ? (
       <a href="/">
         <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12" />
       </a>
     ) : (
-      <a class="font-heading text-3xl glow-text leading-snug tracking-wider font-bold text-emerald-300 sm:text-4xl" href="/">
+      <a class="font-heading text-3xl glow-text leading-snug tracking-wide font-bold text-emerald-300" href="/">
         {siteConfig.title}
       </a>
     )
   }
-  {siteConfig.subtitle && <p class="text-sm font-body leading-tight mt-1">{siteConfig.subtitle}</p>}
+  {siteConfig.subtitle && <p class="text-sm font-body leading-tight mt-2">{siteConfig.subtitle}</p>}
 </header>
