@@ -7,7 +7,7 @@ import { Menu, X } from '@lucide/astro';
 const navLinks = siteConfig.headerNavLinks || [];
 ---
 
-<nav class="w-full min-h-15 p-4 relative md:p-6 bg-zinc-950/95 mb-6">
+<nav class="w-full min-h-16 p-4 relative bg-zinc-950/95 mb-6 border-b-2 border-emerald-600/50">
   {
     navLinks.length > 0 && (
       <div class="w-full md:max-w-3xl md:mx-auto relative px-4">
@@ -48,7 +48,7 @@ const navLinks = siteConfig.headerNavLinks || [];
     <li class="py-2">
       <NavLink
         href={link.href}
-        class="text-xl font-accent text-gray-200 cursor-pointer transition-colors duration-200 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2"
+        class="text-xl font-accent tracking-wide text-gray-200 cursor-pointer decoration-0 transition-all duration-200 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2"
       >
         {link.text}
       </NavLink>
