@@ -12,7 +12,13 @@ const hero = siteConfig.hero;
       {hero.title && <h1 class="leading-tight tracking-wider font-code font-medium text-xl text-emerald-300">{hero.title}</h1>}
       {hero.image?.src && (
         <figure>
-          <img class="w-full" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
+          <img
+            class="w-full shadow-sm border border-emerald-600 rounded-md shadow-emerald-600/70"
+            src={hero.image.src}
+            loading="lazy"
+            decoding="async"
+            alt={hero.image.alt || ''}
+          />
           {hero.image.caption && <figcaption class="mt-1.5 text-xs">{hero.image.caption}</figcaption>}
         </figure>
       )}
