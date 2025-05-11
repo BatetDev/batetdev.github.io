@@ -10,15 +10,15 @@ const TitleTag = headingLevel;
 
 const previewClasses = 'flex justify-between items-start gap-8 group';
 const innerClasses =
-  'grow relative bg-gray-900/20 backdrop-blur-sm border borde-emerald-400/50 rounded-lg p-6 shadow-md shadow-emerald-400/30 transition-all duration-300 hover:shadow-emerald-400/50';
+  'grow relative bg-gray-900/20 backdrop-blur-sm border border-emerald-400/50 rounded-lg p-5 shadow-md shadow-emerald-400/30 transition-all duration-300 hover:shadow-emerald-400/50';
 ---
 
 <a class:list={[previewClasses, className]} href={`/blog/${post.id}/`}>
   <div class={innerClasses}>
-    <TitleTag class="text-xl leading-tight tracking-wider font-medium glow-text sm:text-2xl">
+    <TitleTag class="text-lg leading-tight tracking-wider font-medium glow-text">
       {title}
     </TitleTag>
-    <div class="mt-1 text-sm leading-normal font-code">
+    <div class="mt-3 text-sm leading-normal font-code">
       <FormattedDate date={publishDate} />
       {
         updatedDate && (
