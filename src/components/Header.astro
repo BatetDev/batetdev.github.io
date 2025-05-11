@@ -9,10 +9,10 @@ import siteConfig from '../data/site-config';
         <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12" />
       </a>
     ) : (
-      <a class="font-heading text-2xl glow-text leading-snug tracking-wider font-bold text-emerald-300" href="/">
+      <a class="font-heading text-3xl glow-text leading-snug tracking-wider font-bold text-emerald-300" href="/">
         {siteConfig.title}
       </a>
     )
   }
-  {siteConfig.subtitle && <p class="text-sm font-body italic leading-tight mt-3">{siteConfig.subtitle}</p>}
+  {siteConfig.subtitle && <p class="text-sm font-body tracking-tight leading-tight mt-4">{siteConfig.subtitle}</p>}
 </header>
