@@ -41,7 +41,7 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
   website: 'https://batetdev.github.io',
   title: 'echo_PATH',
-  subtitle: 'My Saga of Growth Through Code',
+  subtitle: 'Growing Through Code',
   description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
   image: {
     src: '/dante-preview.jpg',
