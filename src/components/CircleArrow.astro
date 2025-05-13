@@ -1,0 +1,10 @@
+---
+import { CircleArrowLeft, CircleArrowRight } from '@lucide/astro';
+
+const { direction = 'left', href, ariaLabel, class: className = '' } = Astro.props;
+const Icon = direction === 'left' ? CircleArrowLeft : CircleArrowRight;
+---
+
+<a href={href} aria-label={ariaLabel} class={`inline-flex items-center justify-center hover:text-emerald-300 transition duration-200 ${className}`}>
+  <Icon class="w-9 h-9" />
+</a>
