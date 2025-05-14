@@ -52,6 +52,15 @@ pre {
   font-family: var(--font-code);
 }
 
+code,
+pre {
+  font-family: var(--font-code);
+}
+
+p img {
+  @apply w-full shadow-sm border border-emerald-600/50 rounded-md shadow-emerald-600/70;
+}
+
 /* === Glow Effects === */
 .glow-text {
   animation: glow 2s infinite;
@@ -100,6 +109,7 @@ pre {
     --tw-prose-quotes: var(--text-main);
     --tw-prose-quote-borders: var(--border-main);
     --tw-prose-captions: var(--text-main);
+    --tw-prose-counters: var(--text-main);
     --tw-prose-kbd: var(--text-main);
     --tw-prose-code: var(--text-main);
     --tw-prose-th-borders: var(--border-main);
@@ -116,10 +126,10 @@ pre {
   }
 
   .prose blockquote {
-    @apply font-normal text-green-300 border-1 text-lg leading-6 rounded-md bg-gray-950/90 px-3 py-0.5;
+    @apply font-normal text-emerald-300 border-2 border-emerald-300/50 text-lg leading-6 rounded-md bg-gray-950/80 px-3 py-0.5;
   }
 
   .prose code {
-    @apply font-normal text-green-300 border-1 text-lg leading-6 rounded-md bg-gray-950/90 px-3 py-0.5;
+    @apply font-normal text-emerald-300 border-2 border-emerald-300/50 text-lg leading-6 rounded-md bg-gray-950/80 px-3 py-0.5;
   }
 }
