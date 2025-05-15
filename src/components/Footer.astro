@@ -11,23 +11,23 @@ const socialLinks = siteConfig.socialLinks || [];
 const navLinks = siteConfig.footerNavLinks || [];
 ---
 
-<footer class="w-full bg-zinc-950/95 border-t-2 border-emerald-400/50 py-5 mt-6">
+<footer class="w-full bg-zinc-950/95 border-t-2 border-emerald-400/60 py-5 mt-6 md:py-8 md:mt-8">
   <div class="max-w-3xl mx-auto px-4">
     {
       navLinks.length > 0 && (
-        <div class="mb-6 flex flex-wrap gap-x-6 gap-y-2 justify-center">
+        <div class="mb-6 flex flex-wrap gap-x-6 md:gap-x-10 gap-y-2 justify-center">
           {navLinks.map((link) => (
-            <a class="text-gray-300 hover:text-emerald-400 transition duration-200 font-accent tracking-wide" href={link.href}>
+            <a class="text-gray-300 hover:text-emerald-400 transition duration-200 font-accent tracking-wide md:text-xl" href={link.href}>
               {link.text}
             </a>
           ))}
         </div>
       )
     }
-    <div class="flex flex-col gap-5 justify-between items-center">
+    <div class="flex flex-col gap-5 md:gap-8 justify-between items-center">
       {
         socialLinks.length > 0 && (
-          <div class="flex flex-wrap gap-x-6 gap-y-1 justify-center">
+          <div class="flex flex-wrap gap-x-6 md:gap-x-10 gap-y-1 justify-center">
             {socialLinks.map((link) => {
               const Icon = iconMap[link.text as keyof typeof iconMap];
               return (
@@ -38,14 +38,14 @@ const navLinks = siteConfig.footerNavLinks || [];
                   rel="noopener noreferrer"
                   title={link.text}
                 >
-                  {Icon ? <Icon class="w-6 h-6" /> : link.text}
+                  {Icon ? <Icon class="w-6 h-6 md:w-8 md:h-8" /> : link.text}
                 </a>
               );
             })}
           </div>
         )
       }
-      <p class="text-xs text-gray-400 text-center font-code font-medium">
+      <p class="text-xs md:text-sm text-gray-400 text-center font-code font-medium">
         &copy; {new Date().getFullYear()}&nbsp;<a class="hover:text-emerald-400 transition duration-200" href="/">{siteConfig.title}</a>. All rights reserved.
       </p>
     </div>
