@@ -9,11 +9,11 @@ const hero = siteConfig.hero;
 {
   (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
     <section class="w-full flex flex-col gap-5 md:gap-8 mb-16">
-      {hero.title && <h1 class="leading-tight tracking-wider font-code font-medium text-xl md:text-2xl text-emerald-300">{hero.title}</h1>}
+      {hero.title && <h1 class="leading-tight tracking-wider font-code font-medium text-xl md:text-3xl text-emerald-300">{hero.title}</h1>}
       {hero.image?.src && (
         <figure>
           <img
-            class="w-full shadow-sm border border-emerald-600/50 rounded-md shadow-emerald-600/70 md:rounded-lg"
+            class="w-full shadow-sm border border-emerald-600/60 rounded-md shadow-emerald-600/60 md:rounded-lg"
             src={hero.image.src}
             loading="lazy"
             decoding="async"
@@ -22,7 +22,7 @@ const hero = siteConfig.hero;
           {hero.image.caption && <figcaption class="mt-1.5 text-xs">{hero.image.caption}</figcaption>}
         </figure>
       )}
-      {hero.text && <div class="max-w-none prose md:text-lg" set:html={marked.parse(hero.text)} />}
+      {hero.text && <div class="max-w-none prose md:text-2xl md:leading-relaxed" set:html={marked.parse(hero.text)} />}
       {hero.actions && hero.actions.length > 0 && (
         <div class="flex flex-wrap gap-4 mt-2">
           {hero.actions.map((action) => (
