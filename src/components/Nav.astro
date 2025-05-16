@@ -61,9 +61,6 @@ const navLinks = siteConfig.headerNavLinks || [];
 
 </nav>
 
-<!-- Spacer div to prevent content from going under nav -->
-<div class="h-16 md:h-24"></div>
-
 <style>
   @reference "tailwindcss";
 
@@ -115,27 +112,41 @@ const navLinks = siteConfig.headerNavLinks || [];
     const overlay = document.querySelector('.menu-overlay');
 
     function closeMenu() {
-      menuToggleBtn.classList.remove('is-active');
-      menuToggleBtn.setAttribute('aria-expanded', 'false');
-      menuToggleBtn.setAttribute('aria-label', 'Open Menu');
-      menu.classList.remove('is-visible');
-      overlay.classList.remove('is-visible');
+      if (menuToggleBtn) {
+        menuToggleBtn.classList.remove('is-active');
+        menuToggleBtn.setAttribute('aria-expanded', 'false');
+        menuToggleBtn.setAttribute('aria-label', 'Open Menu');
+      }
+      if (menu) {
+        menu.classList.remove('is-visible');
+      }
+      if (overlay) {
+        overlay.classList.remove('is-visible');
+      }
     }
 
-    menuToggleBtn?.addEventListener('click', () => {
-      const isMenuExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
-      if (isMenuExpanded) {
-        closeMenu();
-      } else {
-        menuToggleBtn.classList.add('is-active');
-        menuToggleBtn.setAttribute('aria-expanded', 'true');
-        menuToggleBtn.setAttribute('aria-label', 'Close Menu');
-        menu.classList.add('is-visible');
-        overlay.classList.add('is-visible');
-      }
-    });
+    if (menuToggleBtn) {
+      menuToggleBtn.addEventListener('click', () => {
+        const isMenuExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
+        if (isMenuExpanded) {
+          closeMenu();
+        } else {
+          menuToggleBtn.classList.add('is-active');
+          menuToggleBtn.setAttribute('aria-expanded', 'true');
+          menuToggleBtn.setAttribute('aria-label', 'Close Menu');
+          if (menu) {
+            menu.classList.add('is-visible');
+          }
+          if (overlay) {
+            overlay.classList.add('is-visible');
+          }
+        }
+      });
+    }
 
-    overlay?.addEventListener('click', closeMenu);
+    if (overlay) {
+      overlay.addEventListener('click', closeMenu);
+    }
 
     // Close menu when a nav link is clicked (mobile only)
     document.querySelectorAll('.menu li a').forEach((link) => {
