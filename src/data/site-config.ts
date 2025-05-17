@@ -42,10 +42,10 @@ const siteConfig: SiteConfig = {
   website: 'https://batetdev.github.io',
   title: 'echo_PATH',
   subtitle: 'Growing Through Code',
-  description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+  description: 'Astro personal web dev journey Blog / Portfolio by Fran Batet',
   image: {
     src: '/dante-preview.jpg',
-    alt: 'Dante - Astro.js and Tailwind CSS theme',
+    alt: 'Dante - Astro.js and Tailwind CSS theme by justgoodui.com',
   },
   headerNavLinks: [
     {
@@ -90,11 +90,11 @@ const siteConfig: SiteConfig = {
     },
   ],
   hero: {
-    title: '$ npm run intro',
-    text: "I'm **Fran Batet**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence. My approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products. I have a profound appreciation for top-notch software, visual design, and the principles of product-led growth. Feel free to explore some of my coding endeavors on <a href='https://github.com/JustGoodUI/dante-astro-theme'>GitHub</a> or follow me on <a href='https://twitter.com/justgoodui'>Twitter/X</a>.",
+    title: '$ npm run dev',
+    text: "I'm **Fran Batet**, an aspiring Full Stack web developer currently working throught **The Odin Project's** <a href='https://www.theodinproject.com/paths/full-stack-javascript' target='_blank' rel='noopener noreferrer'>Full Stack JavaScript Path</a>. Here, I document my progress by sharing my solutions to curriculum projects as well as my personal creations. Feel free to check out my repos on <a href='https://github.com/BatetDev' target='_blank' rel='noopener noreferrer'>GitHub</a> or connect with me on <a href='https://www.linkedin.com/in/francisco-batet-ab7274298/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>.",
     image: {
-      src: '/hero.jpeg',
-      alt: 'A person sitting at a desk in front of a computer',
+      src: '/hero.jpg',
+      alt: 'A raven standing on top of a laptop',
     },
     actions: [
       {
@@ -104,7 +104,7 @@ const siteConfig: SiteConfig = {
     ],
   },
   subscribe: {
-    title: 'Subscribe to Dante Newsletter',
+    title: 'Subscribe to my Newsletter',
     text: 'One update per week. All the latest posts directly in your inbox.',
     formUrl: '#',
   },
