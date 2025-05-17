@@ -47,16 +47,16 @@ const { Content } = await render(post);
         }
       </div>
     </header>
-    <div class="max-w-none prose">
+    <div class="max-w-none prose md:text-xl">
       <Content />
     </div>
     <div class="mt-8 flex flex-wrap items-center gap-6 text-sm justify-between">
       {
         tags.length > 0 && (
-          <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm font-code font-bold tracking-wide">
+          <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm md:text-base font-code font-bold tracking-wide">
             {tags.map((tag) => (
               <a
-                class="hover:text-emerald-300 hover:underline hover:decoration-2 hover:underline-offset-2 transition duration-200"
+                class="hover:text-emerald-300 hover:underline hover:decoration-2 hover:underline-offset-2 transition duration-200 bg-zinc-900 rounded-full px-3 py-2"
                 href={`/tags/${slugify(tag)}`}
               >
                 #{tag}
@@ -71,7 +71,7 @@ const { Content } = await render(post);
   {
     (prevPost || nextPost) && (
       <div class="my-10">
-        <h2 class="mb-12 text-2xl">Read Next</h2>
+        <h2 class="mb-12 text-xl md:text-2xl font-heading">Read Next</h2>
         {nextPost && <PostPreview post={nextPost} class="mb-10" headingLevel="h3" />}
         {prevPost && <PostPreview post={prevPost} class="mb-10" headingLevel="h3" />}
       </div>
