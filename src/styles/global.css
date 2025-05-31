@@ -21,7 +21,7 @@
   --font-body: 'Fira Sans', sans-serif;
   --font-code: 'Fira Code', monospace;
   --text-base: 1rem;
-  --text-scale: 1.25;
+  --text-scale: 1.1;
 }
 
 /* === Base Styles === */
@@ -38,7 +38,7 @@ body {
 h1 {
   font-family: var(--font-code);
   font-weight: 600;
-  font-size: calc(var(--text-base) * var(--text-scale) * 2.5);
+  font-size: calc(var(--text-base) * var(--text-scale) * 2);
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 1.5rem;

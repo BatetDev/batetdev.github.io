@@ -21,7 +21,7 @@ const { showHeader = true, ...head } = Astro.props;
     </script>
     <ClientRouter />
   </head>
-  <body class="bg-gray-900 text-gray-200 font-body">
+  <body class="bg-gray-900 text-gray-200">
     <!-- Nav -->
     <Nav />
 
@@ -34,7 +34,7 @@ const { showHeader = true, ...head } = Astro.props;
 
       <!-- Main Content -->
       <main class="flex flex-col min-h-screen">
-        <div class="grow w-full max-w-3xl mx-auto bg-zinc-950/95 p-6 rounded-lg glow-border md:p-10 md:rounded-xl">
+        <div class="grow w-full max-w-3xl mx-auto bg-zinc-950/80 p-6 rounded-lg glow-border md:p-10 md:rounded-xl backdrop-blur-xs">
           <slot />
         </div>
       </main>
