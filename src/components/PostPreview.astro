@@ -10,15 +10,15 @@ const TitleTag = headingLevel;
 
 const previewClasses = 'flex justify-between items-start gap-8 group';
 const innerClasses =
-  'grow relative bg-gray-950/60 backdrop-blur-sm border-2 border-gray-200/60 rounded-lg p-5 md:p-6 shadow-md shadow-emerald-400/30 transition duration-300 hover:shadow-emerald-400/50 hover:border-emerald-300/90 hover:scale-[1.01]';
+  'grow relative bg-gray-950/50 backdrop-blur-xs border-2 border-gray-200/50 rounded-lg p-4 md:p-6 shadow-md shadow-emerald-400/30 transition duration-300 ease-in-out hover:shadow-emerald-400/50 hover:border-emerald-300/90 hover:scale-[1.01]';
 ---
 
 <a class:list={[previewClasses, className]} href={`/blog/${post.id}/`}>
   <div class={innerClasses}>
-    <TitleTag class="text-lg md:text-xl leading-tight tracking-wider font-bold">
+    <TitleTag class="">
       {title}
     </TitleTag>
-    <div class="mt-3 md:mt-4 text-sm md:text-base leading-normal font-code">
+    <div class="mt-3 md:mt-4">
       <FormattedDate date={publishDate} />
       {
         updatedDate && (
@@ -31,6 +31,30 @@ const innerClasses =
         )
       }
     </div>
-    {excerpt && <div class="mt-3 md:mt-4 text-sm md:text-base leading-normal md:leading-relaxed">{excerpt}</div>}
+    {excerpt && <div class="mt-4">{excerpt}</div>}
   </div>
 </a>
+
+<!-- ---
+import { type CollectionEntry } from 'astro:content';
+
+type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
+
+const { project, class: className, headingLevel = 'h2' } = Astro.props;
+const { title, description } = project.data;
+const TitleTag = headingLevel;
+
+const previewClasses = 'flex justify-between items-start gap-8 group';
+const innerClasses =
+  'grow relative bg-gray-950/50 backdrop-blur-xs border-2 border-gray-200/50 rounded-lg p-4 md:p-6 shadow-md shadow-emerald-400/30 transition duration-300 ease-in-out hover:shadow-emerald-400/50 hover:border-emerald-300/90 hover:scale-[1.01]';
+---
+
+<a class:list={[previewClasses, className]} href={`/projects/${project.id}/`}>
+  <div class={innerClasses}>
+    <TitleTag class="">
+      {title}
+    </TitleTag>
+    {description && <div class="mt-3 md:mt-4">{description}</div>}
+  </div>
+</a>
+ -->
