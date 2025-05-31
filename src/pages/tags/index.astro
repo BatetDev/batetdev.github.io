@@ -18,21 +18,19 @@ const tags = getAllTags(posts).sort((tagA, tagB) => {
   description="Explore tag directory for easy navigation and discovery. Find a wide range of topics, articles, and insights organized by tags, making it effortless to locate the content that interests you most."
   showHeader={false}
 >
-  <h1 class="mb-12 text-2xl md:text-3xl font-bold tracking-wide font-heading">All Tags</h1>
+  <h1 class="mb-12">All Tags</h1>
   {
     tags.map((tag) => {
       const postCount = getPostsByTag(posts, tag.id).length;
       return (
         <a class="mb-8 flex justify-between items-start gap-8 group" href={`/tags/${tag.id}`}>
           <div class="grow">
-            <h2 class="text-xl leading-tight font-heading font-medium group-hover:underline group-hover:underline-offset-4 group-hover:text-emerald-400 transition-all duration-200">
-              {tag.name}
-            </h2>
-            <div class="mt-1 font-body text-sm leading-normal tracking-wide">
+            <h2 class="group-hover:underline group-hover:underline-offset-4 group-hover:text-emerald-400 transition-all duration-200">{tag.name}</h2>
+            <div class="mt-1">
               {postCount} {postCount === 1 ? 'post' : 'posts'}
             </div>
           </div>
-          <div class="hidden font-body opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
+          <div class="hidden opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
             View Tag Archive <ArrowRight class="fill-current w-4 h-4" />
           </div>
         </a>
