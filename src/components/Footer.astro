@@ -11,13 +11,13 @@ const socialLinks = siteConfig.socialLinks || [];
 const navLinks = siteConfig.footerNavLinks || [];
 ---
 
-<footer class="w-full bg-zinc-950/95 border-t-2 border-emerald-400/60 py-5 mt-6 md:py-8 md:mt-8">
+<footer class="w-full bg-zinc-950/80 backdrop-blur-xs border-t-2 border-emerald-400/60 py-5 mt-6 md:py-8 md:mt-8">
   <div class="max-w-3xl mx-auto px-4">
     {
       navLinks.length > 0 && (
         <div class="mb-6 flex flex-wrap gap-x-6 md:gap-x-10 gap-y-2 justify-center">
           {navLinks.map((link) => (
-            <a class="text-gray-300 hover:text-emerald-400 transition duration-200 font-accent tracking-wide md:text-xl" href={link.href}>
+            <a class="text-gray-300 hover:text-emerald-400 transition duration-200" href={link.href}>
               {link.text}
             </a>
           ))}
@@ -45,7 +45,7 @@ const navLinks = siteConfig.footerNavLinks || [];
           </div>
         )
       }
-      <p class="text-xs md:text-sm text-gray-400 text-center font-code font-medium">
+      <p class="text-xs md:text-sm text-gray-400 text-center font-medium">
         &copy; {new Date().getFullYear()}&nbsp;<a class="hover:text-emerald-400 transition duration-200" href="/">{siteConfig.title}</a>. All rights reserved.
       </p>
     </div>
