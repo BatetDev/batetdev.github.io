@@ -21,7 +21,7 @@
   --font-body: 'Fira Sans', sans-serif;
   --font-code: 'Fira Code', monospace;
   --text-base: 1rem;
-  --text-scale: 1.1;
+  --text-scale: 1.25;
 }
 
 /* === Base Styles === */
@@ -38,8 +38,7 @@ body {
 h1 {
   font-family: var(--font-code);
   font-weight: 600;
-  font-size: calc(var(--text-base) * var(--text-scale) * 2);
-  letter-spacing: -0.02em;
+  font-size: calc(var(--text-base) * var(--text-scale) * 1.75);
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
@@ -47,15 +46,14 @@ h1 {
 h2 {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: calc(var(--text-base) * var(--text-scale) * 1.8);
-  letter-spacing: -0.01em;
+  font-size: calc(var(--text-base) * var(--text-scale) * 1.5);
   line-height: 1.3;
   margin-bottom: 1.25rem;
 }
 
 h3 {
   font-weight: 500;
-  font-size: calc(var(--text-base) * var(--text-scale) * 1.5);
+  font-size: calc(var(--text-base) * var(--text-scale) * 1.25);
   margin-bottom: 1rem;
 }
 
@@ -63,7 +61,7 @@ h4,
 h5,
 h6 {
   font-weight: 500;
-  font-size: calc(var(--text-base) * var(--text-scale) * 1.2);
+  font-size: calc(var(--text-base) * var(--text-scale) * 1.125);
 }
 
 a,
