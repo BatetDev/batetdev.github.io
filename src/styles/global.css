@@ -40,7 +40,7 @@ h1 {
   font-weight: 600;
   font-size: calc(var(--text-base) * var(--text-scale) * 1.75);
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 h2 {
@@ -48,7 +48,7 @@ h2 {
   font-weight: 600;
   font-size: calc(var(--text-base) * var(--text-scale) * 1.5);
   line-height: 1.3;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
 }
 
 h3 {
@@ -111,9 +111,7 @@ p img {
   }
 
   .prose :where(h1) {
-    font-family: var(--font-code);
     font-weight: 600;
-    letter-spacing: -0.02em;
   }
 
   .prose :where(h2) {
