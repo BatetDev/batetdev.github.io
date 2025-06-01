@@ -26,17 +26,17 @@
   code,
   pre,
   kbd {
-    @apply font-mono font-feature-settings['calt']_1;
+    @apply font-mono;
   }
 }
 
 /* === Tailwind Typography Customization === */
 @layer utilities {
   .prose {
-    --tw-prose-body: #e2e8f0;
-    --tw-prose-headings: #e2e8f0;
-    --tw-prose-links: #e2e8f0;
-    --tw-prose-code: #e2e8f0;
+    --tw-prose-body: @apply text-red-600;
+    --tw-prose-headings: @apply text-red-600;
+    --tw-prose-links: @apply text-red-600;
+    --tw-prose-code: @apply text-red-600;
   }
 
   .prose :where(h1) {
