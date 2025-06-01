@@ -1,0 +1,19 @@
+/* === Glow Effects === */
+.glow-text {
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(0, 212, 146, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(0, 212, 146, 0.8);
+  }
+}
+
+.glow-border {
+  border: 2px solid rgba(0, 212, 146, 0.5);
+  box-shadow: 0 0 8px rgba(0, 212, 146, 0.5);
+}

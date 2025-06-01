@@ -1,0 +1,61 @@
+/* === Typography System === */
+@layer base {
+  h1 {
+    @apply font-mono font-semibold text-3xl leading-tight tracking-tight mb-4;
+  }
+
+  h2 {
+    @apply font-mono font-semibold text-2xl leading-snug tracking-tight mb-6;
+  }
+
+  h3 {
+    @apply font-medium text-xl leading-normal tracking-normal mb-4;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply font-medium text-lg leading-normal tracking-normal;
+  }
+
+  a,
+  .accent {
+    @apply font-medium hover:text-emerald-300 transition-colors duration-200;
+  }
+
+  code,
+  pre,
+  kbd {
+    @apply font-mono font-feature-settings['calt']_1;
+  }
+}
+
+/* === Tailwind Typography Customization === */
+@layer utilities {
+  .prose {
+    --tw-prose-body: #e2e8f0;
+    --tw-prose-headings: #e2e8f0;
+    --tw-prose-links: #e2e8f0;
+    --tw-prose-code: #e2e8f0;
+  }
+
+  .prose :where(h1) {
+    @apply font-semibold;
+  }
+
+  .prose :where(h2) {
+    @apply font-semibold;
+  }
+
+  .prose :where(h3, h4, h5, h6) {
+    @apply font-medium;
+  }
+
+  .prose code {
+    @apply bg-gray-800/50 px-1 py-0.5 rounded border border-emerald-500/30;
+  }
+
+  .prose a {
+    @apply font-medium hover:text-emerald-300 transition-colors duration-200;
+  }
+}
