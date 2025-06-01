@@ -37,6 +37,7 @@
     --tw-prose-headings: @apply text-red-600;
     --tw-prose-links: @apply text-red-600;
     --tw-prose-code: @apply text-red-600;
+    --tw-prose-quotes: @apply text-red-600;
   }
 
   .prose :where(h1) {
