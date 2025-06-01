@@ -26,7 +26,7 @@
   code,
   pre,
   kbd {
-    @apply font-mono;
+    @apply font-mono border-2 border-emerald-500/50;
   }
 }
 
@@ -61,8 +61,24 @@
     @apply font-medium;
   }
 
-  .prose code {
-    @apply bg-gray-800/50 px-1 py-0.5 rounded border border-emerald-500/30;
+  /* Code Snippets */
+  .prose pre {
+    @apply p-2.5 leading-snug rounded-md !bg-gray-950 text-xs;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #10b981 transparent;
+  }
+
+  .prose pre::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+  }
+
+  .prose pre::-webkit-scrollbar-thumb {
+    @apply rounded-lg bg-emerald-500;
+  }
+
+  .prose pre::-webkit-scrollbar-thumb:hover {
+    @apply bg-emerald-400;
   }
 
   .prose a {
