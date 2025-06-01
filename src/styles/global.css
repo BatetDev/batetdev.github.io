@@ -2,5 +2,5 @@
 @plugin '@tailwindcss/typography';
 
 @import './base.css';
-@import './typography.css';
 @import './utilities.css';
+@import './typography.css';

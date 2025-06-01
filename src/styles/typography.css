@@ -33,11 +33,20 @@
 /* === Tailwind Typography Customization === */
 @layer utilities {
   .prose {
-    --tw-prose-body: @apply text-red-600;
-    --tw-prose-headings: @apply text-red-600;
-    --tw-prose-links: @apply text-red-600;
-    --tw-prose-code: @apply text-red-600;
-    --tw-prose-quotes: @apply text-red-600;
+    --tw-prose-body: oklch(96.7% 0.003 264.542);
+    --tw-prose-headings: oklch(96.7% 0.003 264.542);
+    --tw-prose-links: oklch(96.7% 0.003 264.542); /* gray-200 */
+    --tw-prose-bold: oklch(84.5% 0.143 164.978); /* emerald-300 */
+    --tw-prose-counters: oklch(96.7% 0.003 264.542);
+    --tw-prose-bullets: oklch(96.7% 0.003 264.542);
+    --tw-prose-hr: oklch(84.5% 0.143 164.978);
+    --tw-prose-quotes: oklch(84.5% 0.143 164.978);
+    --tw-prose-quote-borders: oklch(84.5% 0.143 164.978);
+    --tw-prose-captions: oklch(84.5% 0.143 164.978);
+  }
+
+  .prose blockquote {
+    @apply bg-gray-950/60 px-3 py-0.5 rounded-md border-l-4 border-emerald-300/60;
   }
 
   .prose :where(h1) {
