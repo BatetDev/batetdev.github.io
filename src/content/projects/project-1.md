@@ -196,6 +196,7 @@ npm install
 npm run dev
 ```
 
-"The oldest and strongest emotion of mankind is fear,
-and the oldest and strongest kind of fear is fear of the unknown."
-— H.P. Lovecraft (and possibly your weather forecaster)
+> The oldest and strongest emotion of mankind is fear,
+> and the oldest and strongest kind of fear is fear of the unknown.
+
+<span class="block text-right italic">— H.P. Lovecraft</span>
