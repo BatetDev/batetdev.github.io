@@ -29,7 +29,7 @@ const { Content } = await render(project);
 ---
 
 <BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
-  <article class="mb-16">
+  <article class="mb-10 last:mb-2">
     <header class="mb-8">
       <h1 class="text-3xl leading-tight font-heading font-bold">{title}</h1>
     </header>
@@ -39,10 +39,10 @@ const { Content } = await render(project);
   </article>
   {
     (prevProject || nextProject) && (
-      <div class="my-16">
-        <h2 class="mb-12 text-xl md:text-2xl font-heading">View Next</h2>
-        {nextProject && <ProjectPreview project={nextProject} class="mb-10" headingLevel="h3" />}
-        {prevProject && <ProjectPreview project={prevProject} class="mb-10" headingLevel="h3" />}
+      <div class="my-12 last:mb-2">
+        <h2 class="mb-8 text-xl md:text-2xl font-heading">View Next</h2>
+        {nextProject && <ProjectPreview project={nextProject} class="mb-8 last:mb-2" headingLevel="h3" />}
+        {prevProject && <ProjectPreview project={prevProject} class="mb-8 last:mb-2" headingLevel="h3" />}
       </div>
     )
   }

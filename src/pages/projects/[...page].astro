@@ -25,6 +25,6 @@ const portfolio = page.data;
   showHeader={false}
 >
   <h1 class="mb-12 text-3xl md:text-4xl leading-tight font-heading font- tracking-wide">Projects</h1>
-  {portfolio.map((project) => <ProjectPreview project={project} class="mb-10" />)}
-  <Pagination page={page} class="my-16" />
+  {portfolio.map((project) => <ProjectPreview project={project} class="mb-8 last:mb-2" />)}
+  <Pagination page={page} class="my-12" />
 </BaseLayout>

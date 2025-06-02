@@ -19,10 +19,10 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
   <Hero />
   {
     featuredProjects?.length > 0 && (
-      <div class="mb-14">
+      <div class="mb-10 last:mb-2">
         <h2 class="">Projects</h2>
         {featuredProjects.map((project) => (
-          <ProjectPreview project={project} class="mb-10" headingLevel="h3" />
+          <ProjectPreview project={project} class="mb-8 last:mb-2" headingLevel="h3" />
         ))}
         <div class="mt-12">
           <Button href="/projects">View All Projects</Button>
@@ -35,7 +35,7 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
       <div class="mb-4">
         <h2 class="">Writing</h2>
         {featuredPosts.map((post) => (
-          <PostPreview post={post} class="mb-10" headingLevel="h3" />
+          <PostPreview post={post} class="mb-8 last:mb-2" headingLevel="h3" />
         ))}
         <div class="mt-10">
           <Button href="/blog">View All Posts</Button>
