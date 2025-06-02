@@ -63,7 +63,7 @@
 
   /* Code Snippets */
   .prose pre {
-    @apply p-2.5 leading-snug rounded-md !bg-gray-950 text-xs;
+    @apply px-2.5 py-3 leading-snug rounded-md !bg-gray-950 text-xs;
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: #10b981 transparent;
   }

@@ -199,4 +199,4 @@ npm run dev
 > The oldest and strongest emotion of mankind is fear,
 > and the oldest and strongest kind of fear is fear of the unknown.
 
-<span class="block text-right italic">— H.P. Lovecraft</span>
+<span class="block text-right">— H.P. Lovecraft</span>
