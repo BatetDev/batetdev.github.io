@@ -11,7 +11,7 @@ const { showHeader = true, ...head } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="antialiased break-words">
+<html lang="en" class="antialiased break-words scroll-smooth">
   <head>
     <BaseHead {...head} />
     <script>
@@ -33,8 +33,8 @@ const { showHeader = true, ...head } = Astro.props;
       {showHeader && <Header />}
 
       <!-- Main Content -->
-      <main class="flex flex-col min-h-screen">
-        <div class="grow w-full max-w-3xl mx-auto bg-zinc-950/80 p-5 md:p-6 rounded-lg glow-border md:rounded-xl backdrop-blur-xs">
+      <main class="flex flex-col items-center">
+        <div class="w-full max-w-3xl mx-auto bg-zinc-950/80 px-5 py-8 md:px-6 md:py-9 rounded-lg glow-border md:rounded-xl backdrop-blur-xs">
           <slot />
         </div>
       </main>
