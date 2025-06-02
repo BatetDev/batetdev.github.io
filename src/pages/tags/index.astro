@@ -1,11 +1,17 @@
 ---
+// filepath: c:\Users\Joaquin\Desktop\000-own-projects-repos\batetdev.github.io\src\pages\tags\index.astro
 import { getCollection } from 'astro:content';
 import ArrowRight from '../../icons/ArrowRight.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 // import Subscribe from '../../components/Subscribe.astro'; For later use
 import { sortItemsByDateDesc, getAllTags, getPostsByTag } from '../../utils/data-utils';
 
-const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
+// Fetch both blog and project posts
+const blogPosts = await getCollection('blog');
+const projectPosts = await getCollection('projects');
+const posts = [...blogPosts, ...projectPosts].sort(sortItemsByDateDesc);
+
+// Aggregate tags from all posts
 const tags = getAllTags(posts).sort((tagA, tagB) => {
   const postCountTagA = getPostsByTag(posts, tagA.id).length;
   const postCountTagB = getPostsByTag(posts, tagB.id).length;

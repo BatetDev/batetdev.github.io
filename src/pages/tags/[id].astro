@@ -1,0 +1,80 @@
+---
+// filepath: c:\Users\Joaquin\Desktop\000-own-projects-repos\batetdev.github.io\src\pages\tags\[id].astro
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Pagination from '../../components/Pagination.astro';
+import siteConfig from '../../data/site-config';
+import { sortItemsByDateDesc, getAllTags, getPostsByTag } from '../../utils/data-utils';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  // Fetch all blog and project posts
+  const blogPosts = await getCollection('blog');
+  const projectPosts = await getCollection('projects');
+  const posts = [...blogPosts, ...projectPosts];
+  // Get all unique tags
+  const tags = getAllTags(posts);
+  // Return a path for each tag
+  return tags.map((tag) => ({ params: { id: tag.id } }));
+}
+
+const { id } = Astro.params;
+
+// Define a type for posts from blog/projects collections
+type PostEntry = CollectionEntry<'blog'> | CollectionEntry<'projects'>;
+
+// Fetch both blog and project posts
+const blogPosts = (await getCollection('blog')) as PostEntry[];
+const projectPosts = (await getCollection('projects')) as PostEntry[];
+const posts: PostEntry[] = [...blogPosts, ...projectPosts].sort(sortItemsByDateDesc);
+
+// Filter posts by tag
+
+// @ts-expect-error supress
+const taggedPosts: PostEntry[] = getPostsByTag(posts, id);
+const allTags = getAllTags(posts);
+const currentTag = allTags.find((tag) => tag.id === id);
+
+// Pagination logic for page 1
+const pageSize = siteConfig.postsPerPage || 4;
+const pagePosts = taggedPosts.slice(0, pageSize);
+---
+
+<BaseLayout title={`Posts Tagged ${currentTag?.name || id}`}>
+  <h1 class="mb-12 text-2xl leading-tight font-heading">Posts Tagged "{currentTag?.name || id}"</h1>
+  {
+    pagePosts
+      .filter(
+        (post) =>
+          post &&
+          typeof post.id === 'string' &&
+          typeof post.collection === 'string' &&
+          post.data &&
+          typeof post.data.title === 'string' &&
+          Array.isArray(post.data.tags)
+      )
+      // @ts-expect-error ignore
+      .map((post) => <PostPreview post={post} class="mb-8 last:mb-2" />)
+  }
+  {
+    taggedPosts.length > pageSize && (
+      <Pagination
+        page={{
+          data: pagePosts,
+          url: {
+            current: `/tags/${id}`,
+            next: `/tags/${id}/2`,
+            prev: null,
+          },
+          currentPage: 1,
+          lastPage: Math.ceil(taggedPosts.length / pageSize),
+          start: 1,
+          end: pageSize,
+          total: taggedPosts.length,
+        }}
+        class="my-16"
+      />
+    )
+  }
+</BaseLayout>
