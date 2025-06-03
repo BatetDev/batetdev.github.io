@@ -1,28 +1,40 @@
 ---
 title: 'Eldritch Forecast: A Cosmic Horror Weather App'
-description: 'A vintage-styled weather application with Lovecraftian flair - my JavaScript final project for The Odin Project'
-publishDate: 'Jan 02 2024'
+description: 'A vintage-styled weather app with Cosmic Horror flair.'
+publishDate: 'Jun 02 2025'
 seo:
   image:
     src: '/eldritch-forecast-preview.jpg'
-    alt: 'App interface showing storm warning with horror description'
+    alt: 'App mobile interface showing different weather conditions, icons and dreary descriptions'
 tags: ['the-odin-project', 'javascript', 'api', 'webpack', 'tailwindcss']
 ---
 
 ![Eldritch Forecast Interface Screenshot](/eldritch-forecast-preview.jpg)
 
-_Built as the final JavaScript project for [The Odin Project](https://www.theodinproject.com/) curriculum_
+> The oldest and strongest emotion of mankind is fear,
+> and the oldest and strongest kind of fear is fear of the unknown.
+
+<span class="block text-right">— H.P. Lovecraft</span>
 
 ## Project Overview
 
-Eldritch Forecast transforms mundane weather data into cosmic horror revelations. What began as a standard weather app assignment evolved into a narrative experience that combines:
+Eldritch Forecast is my solution for [Project Weather App](https://www.theodinproject.com/lessons/node-path-javascript-weather-app), which is part of the JavaScript Course by The Odin Project.
 
-- Real-time weather data from Visual Crossing API
-- Lovecraftian descriptions for each weather condition
-- Vintage newspaper aesthetic with Tailwind CSS
-- Modular JavaScript architecture with Webpack
+Core assignments for this project are the following:
 
-## Technical Implementation
+- Provide a form for users to input a location and fetch real-time weather data from an external API.
+- Write JavaScript functions to request weather data for a given location and process the returned JSON, extracting only the necessary information.
+- Display the weather information on the webpage, including optional weather icons.
+- Optional: Implement a loading indicator while fetching data.
+
+I always try to throw in some extra challenges to push myself a bit further. I had the initial idea of implementing some dreary descriptions for the different possible weather conditions received from the Visual Crossing Weather API. Initially I was leaning into more of a gothic vibe for the phrases, but in the end I thought Cosmic Horror was a bit more related to the topic of weather.
+
+In the end, I went with these two as stretch goals:
+
+- Give the app a vintage gazette theme.
+- Write JavaScript functions to display cosmic horror-infused descriptions for the fetched weather forecasts.
+
+## Challenges & Solutions
 
 ### Core Architecture
 
@@ -62,7 +74,7 @@ export function processWeatherData(data) {
 ```bash
 // api.js
 export async function fetchWeather(location) {
-  const apiKey = 'DR8R9TFNZJNM2LKEGT5JHB6FC';
+  const apiKey = 'YOUR_API_KEY_HERE';
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(location)}?key=${apiKey}`;
 
   try {
@@ -195,8 +207,3 @@ cd top-project-weather-app
 npm install
 npm run dev
 ```
-
-> The oldest and strongest emotion of mankind is fear,
-> and the oldest and strongest kind of fear is fear of the unknown.
-
-<span class="block text-right">— H.P. Lovecraft</span>
