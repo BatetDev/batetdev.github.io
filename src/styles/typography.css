@@ -46,7 +46,7 @@
   }
 
   .prose blockquote {
-    @apply bg-gray-950/60 px-3 py-0.5 rounded-md border-l-4 border-emerald-300/60;
+    @apply bg-gray-950 px-3 py-0.5 rounded-md border border-l-4 border-emerald-500/50;
   }
 
   .prose :where(h1) {
