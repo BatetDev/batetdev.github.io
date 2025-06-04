@@ -3,12 +3,12 @@
   "type": "module",
   "version": "0.2.0",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev --open",
+    "dev": "astro dev --open",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
+    "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
