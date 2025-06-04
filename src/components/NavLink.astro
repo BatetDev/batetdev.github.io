@@ -8,9 +8,9 @@ const { href, class: className, ...props } = Astro.props;
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 
-const baseStyles = 'text-xl font-accent cursor-pointer transition-colors duration-200';
-const activeStyles = 'text-emerald-400 underline underline-offset-4 decoration-2';
-const inactiveStyles = 'text-gray-200 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2';
+const baseStyles = 'text-xl font-accent cursor-pointer transition-all duration-250';
+const activeStyles = 'text-emerald-300 underline underline-offset-4 decoration-2';
+const inactiveStyles = 'text-gray-200 hover:text-emerald-300 hover:underline hover:underline-offset-4 hover:decoration-2';
 ---
 
 <a class:list={[baseStyles, isActive ? activeStyles : inactiveStyles, className]} href={href} {...props}>
