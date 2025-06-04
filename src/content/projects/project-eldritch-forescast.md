@@ -170,7 +170,8 @@ The async keyword tells JavaScript this function will handle asynchronous operat
 - Second await pauses until we convert the response to JSON.
 
 4. What You Get Back
-   The function returns a promise that resolves to raw weather data like this:
+
+The function returns a promise that resolves to raw weather data like this:
 
 ```json
 // Small sample, actual API response is 1000+ lines long
