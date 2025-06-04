@@ -59,7 +59,9 @@ This assignment was relatively straightforward. We needed to add a form element 
 <div id="error-message"></div>
 ```
 
-![Weather form screenshot](/project-1-form.jpg)
+<p align="center">
+  <img src="/project-1-form.jpg" alt="Weather form screenshot">
+</p>
 
 _Figure: Weather form with error message_
 
