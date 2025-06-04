@@ -21,14 +21,6 @@
   .font-mono {
     font-family: var(--font-mono);
   }
-
-  /* === Typography System === */
-  code,
-  pre,
-  kbd {
-    @apply font-mono text-sm text-gray-200 bg-gray-800/50 px-1 py-0.5 rounded border border-emerald-500/30;
-    font-variant-ligatures: common-ligatures discretionary-ligatures;
-  }
 }
 
 html {
@@ -63,5 +55,9 @@ body {
 }
 
 .prose img {
-  @apply border-2 border-emerald-500/50 rounded-sm md:rounded-md;
+  @apply border-3 border-emerald-500/50 rounded-sm md:rounded-md;
+}
+
+a img {
+  @apply hover:scale-[1.01] hover:border-emerald-500 transition-all duration-300 my-5 w-2xs;
 }

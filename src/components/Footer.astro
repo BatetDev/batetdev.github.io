@@ -11,13 +11,13 @@ const socialLinks = siteConfig.socialLinks || [];
 const navLinks = siteConfig.footerNavLinks || [];
 ---
 
-<footer class="w-full bg-zinc-950/80 backdrop-blur-xs border-t-2 border-emerald-400/60 py-5 mt-8 md:py-6 md:mt-10">
+<footer class="w-full bg-zinc-950 border-t-3 border-emerald-500/50 py-5 mt-8 md:py-6 md:mt-10">
   <div class="max-w-3xl mx-auto">
     {
       navLinks.length > 0 && (
         <div class="mb-4 flex flex-wrap gap-x-12 md:gap-x-14 gap-y-2 justify-center">
           {navLinks.map((link) => (
-            <a class="text-gray-300 hover:text-emerald-400 transition duration-200" href={link.href}>
+            <a class="text-gray-300 hover:text-emerald-300 transition duration-250" href={link.href}>
               {link.text}
             </a>
           ))}
@@ -32,7 +32,7 @@ const navLinks = siteConfig.footerNavLinks || [];
               const Icon = iconMap[link.text as keyof typeof iconMap];
               return (
                 <a
-                  class="inline-flex items-center justify-center text-sm text-gray-300 hover:text-emerald-400 transition duration-200"
+                  class="inline-flex items-center justify-center text-sm text-gray-300 hover:text-emerald-300 transition duration-250"
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -45,8 +45,8 @@ const navLinks = siteConfig.footerNavLinks || [];
           </div>
         )
       }
-      <p class="text-xs md:text-sm text-gray-400 text-center font-medium mt-2">
-        &copy; {new Date().getFullYear()}&nbsp;<a class="hover:text-emerald-400 transition duration-200" href="/">{siteConfig.title}</a>. All rights reserved.
+      <p class="text-xs md:text-sm text-gray-300 text-center font-medium mt-2">
+        &copy; {new Date().getFullYear()}&nbsp;<a class="hover:text-emerald-300 transition duration-250" href="/">{siteConfig.title}</a>. All rights reserved.
       </p>
     </div>
   </div>

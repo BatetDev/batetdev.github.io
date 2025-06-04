@@ -46,7 +46,7 @@
   }
 
   .prose blockquote {
-    @apply bg-gray-950 px-3 py-0.5 rounded-md border border-l-4 border-emerald-500/50;
+    @apply bg-gray-950 px-5 py-0 rounded-md border-1 border-l-4 border-emerald-500/50;
   }
 
   .prose :where(h1) {
@@ -63,7 +63,7 @@
 
   /* Code Snippets */
   .prose pre {
-    @apply px-2.5 py-3 leading-snug rounded-md !bg-gray-950 text-xs my-6;
+    @apply px-2.5 py-3.5 leading-snug rounded-md !bg-gray-950 text-xs my-8;
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: #10b981 transparent;
   }

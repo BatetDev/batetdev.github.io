@@ -385,7 +385,7 @@ src/
 │       └── processWeatherData.js # Data transformation
 ```
 
-## Design Elements 🎨
+## Design Elements
 
 ### Typography
 
@@ -411,12 +411,13 @@ I wanted to give the 'gazette" parts a bit of texture to better resemble old pap
 
 Those were also AI generated using <a href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer">DeepSeek</a> to save time since there is one for each of the 30+ possible main weather conditions.
 
-## Final Thoughts 💭
+## Final Thoughts
 
-This project became a playground for:  
-✅ **Core Skills**: Async/await, API integration, error handling  
-✅ **UX Lessons**: Loading states, conditional UI, responsive feedback  
-✅ **Creative Problem-Solving**: Mapping third-party data to thematic elements
+This project became a playground for:
+
+- **Core Skills**: Async/await, API integration, error handling
+- **UX Lessons**: Loading states, conditional UI, responsive feedback
+- **Creative Problem-Solving**: Mapping third-party data to thematic elements
 
 **What I'd Do Differently**:
 
