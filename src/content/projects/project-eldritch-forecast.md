@@ -301,7 +301,7 @@ So using the sample weather object from before, we pass 'partly-cloudy-night' in
 const icon = mapIconName(weather.icon);
 ```
 
-So for weather.icon ('cloudy'), mapIconName returns the value for such key ('cloud-moon'), which is the name of one of the icons in the Lucide icon set that we can then use like this in displayWeather:
+So for weather.icon ('partly-cloudy-night'), mapIconName returns the value for such key ('cloud-moon'), which is the name of one of the icons in the Lucide icon set that we can then use like this in displayWeather:
 
 ```javascript
 // We declare const icon = mapIconName(weather.icon); before the string literal.
