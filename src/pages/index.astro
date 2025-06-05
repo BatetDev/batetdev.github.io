@@ -25,11 +25,11 @@ if (projects.length === 1) {
   {
     featuredProjects?.length > 0 && (
       <div class="mb-10 last:mb-2">
-        <h2 class="">Projects</h2>
+        <h2>Projects</h2>
         {featuredProjects.map((project) => (
-          <ProjectPreview project={project} class="mb-8 last:mb-2" headingLevel="h3" />
+          <ProjectPreview project={project} class="mb-8 last:mb-2 max-w-lg mx-auto" headingLevel="h3" />
         ))}
-        <div class="mt-12">
+        <div class="flex justify-center">
           <Button href="/projects">View All Projects</Button>
         </div>
       </div>
@@ -38,11 +38,11 @@ if (projects.length === 1) {
   {
     featuredPosts?.length > 0 && (
       <div class="mb-4">
-        <h2 class="">Writing</h2>
+        <h2>Writing</h2>
         {featuredPosts.map((post) => (
-          <PostPreview post={post} class="mb-8 last:mb-2" headingLevel="h3" />
+          <PostPreview post={post} class="mb-8 last:mb-2 max-w-lg mx-auto" headingLevel="h3" />
         ))}
-        <div class="mt-10">
+        <div class="flex justify-center">
           <Button href="/blog">View All Posts</Button>
         </div>
       </div>

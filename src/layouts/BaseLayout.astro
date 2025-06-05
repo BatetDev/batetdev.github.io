@@ -21,20 +21,20 @@ const { showHeader = true, ...head } = Astro.props;
     </script>
     <ClientRouter />
   </head>
-  <body class="bg-gray-900 text-gray-200">
+  <body class="bg-gray-900 min-h-screen flex flex-col text-gray-200">
     <!-- Nav -->
     <Nav />
 
     <!-- Spacer div to prevent content from going under nav -->
-    <div class="h-20 md:h-24"></div>
+    <div class="h-20 sm:h-24 md:h-28"></div>
 
-    <div class="px-2">
+    <div class="px-1 sm:px-3 md:px-6 flex-1 flex flex-col">
       <!-- Optional Header -->
       {showHeader && <Header />}
 
       <!-- Main Content -->
-      <main class="flex flex-col items-center">
-        <div class="w-full max-w-3xl mx-auto bg-zinc-950 px-5 py-8 md:px-6 md:py-9 rounded-lg glow-border md:rounded-xl">
+      <main class="flex flex-col flex-1 items-center">
+        <div class="w-full max-w-3xl mx-auto bg-zinc-950 px-4 sm:px-6 md:px-12 py-8 md:py-10 rounded-lg glow-border md:rounded-xl">
           <slot />
         </div>
       </main>

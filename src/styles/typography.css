@@ -45,8 +45,12 @@
     --tw-prose-captions: oklch(84.5% 0.143 164.978);
   }
 
+  .prose p {
+    @apply leading-relaxed;
+  }
+
   .prose blockquote {
-    @apply bg-gray-950 px-5 py-0 rounded-md border-1 border-l-4 border-emerald-500/50;
+    @apply bg-gray-950 px-5 py-0 mb-0 mt-12 rounded-md border-1 border-l-4 border-emerald-500/50 max-w-lg justify-self-center;
   }
 
   .prose :where(h1) {
@@ -63,7 +67,7 @@
 
   /* Code Snippets */
   .prose pre {
-    @apply px-2.5 py-3.5 leading-snug rounded-md !bg-gray-950 text-xs my-8;
+    @apply px-2.5 md:px-3 py-3.5 md:py-4 leading-snug rounded-md !bg-gray-950 text-xs md:text-sm my-10;
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: #10b981 transparent;
   }
