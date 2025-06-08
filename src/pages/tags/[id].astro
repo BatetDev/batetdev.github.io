@@ -42,7 +42,7 @@ const pagePosts = taggedPosts.slice(0, pageSize);
 ---
 
 <BaseLayout title={`Posts Tagged ${currentTag?.name || id}`}>
-  <h1 class="mb-12 text-2xl leading-tight font-heading">Posts Tagged "{currentTag?.name || id}"</h1>
+  <h1 class="mb-10 text-2xl leading-tight">Posts Tagged "{currentTag?.name || id}"</h1>
   {
     pagePosts
       .filter(
