@@ -24,19 +24,24 @@ const tags = getAllTags(posts).sort((tagA, tagB) => {
   description="Explore tag directory for easy navigation and discovery. Find a wide range of topics, articles, and insights organized by tags, making it effortless to locate the content that interests you most."
   showHeader={false}
 >
-  <h1 class="mb-12">All Tags</h1>
+  <h1 class="mb-10">All Tags</h1>
   {
     tags.map((tag) => {
       const postCount = getPostsByTag(posts, tag.id).length;
       return (
-        <a class="mb-8 flex justify-between items-start gap-8 group" href={`/tags/${tag.id}`}>
+        <a
+          class="mb-5 flex justify-between items-start gap-4 group bg-zinc-900 hover:bg-gray-950 px-3 py-1.5 border-2 border-transparent hover:border-emerald-300 rounded-lg max-w-fit transition-all duration-250 ease-in-out"
+          href={`/tags/${tag.id}`}
+        >
           <div class="grow">
-            <h2 class="group-hover:underline group-hover:underline-offset-4 group-hover:text-emerald-400 transition-all duration-200">{tag.name}</h2>
-            <div class="mt-1">
+            <h2 class="text-xl group-hover:underline group-hover:underline-offset-4 group-hover:text-emerald-300 transition-all duration-250 ease-in-out mb-0 leading-tight">
+              {tag.name}
+            </h2>
+            <div class="mt-1.5 leading-tight tracking-wide">
               {postCount} {postCount === 1 ? 'post' : 'posts'}
             </div>
           </div>
-          <div class="hidden opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
+          <div class="hidden opacity-0 transition-all group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
             View Tag Archive <ArrowRight class="fill-current w-4 h-4" />
           </div>
         </a>
