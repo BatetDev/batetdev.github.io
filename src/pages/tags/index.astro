@@ -30,7 +30,7 @@ const tags = getAllTags(posts).sort((tagA, tagB) => {
       const postCount = getPostsByTag(posts, tag.id).length;
       return (
         <a
-          class="mb-5 flex justify-between items-start gap-4 group bg-zinc-900 hover:bg-gray-950 px-3 py-1.5 border-2 border-transparent hover:border-emerald-300 rounded-lg max-w-fit transition-all duration-250 ease-in-out"
+          class="mb-6 flex justify-between items-start gap-6 group bg-zinc-900 hover:bg-gray-950 px-3 py-2 border-2 border-transparent hover:border-emerald-300 rounded-lg max-w-fit transition-all duration-250 ease-in-out"
           href={`/tags/${tag.id}`}
         >
           <div class="grow">
@@ -41,7 +41,7 @@ const tags = getAllTags(posts).sort((tagA, tagB) => {
               {postCount} {postCount === 1 ? 'post' : 'posts'}
             </div>
           </div>
-          <div class="hidden opacity-0 transition-all group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
+          <div class="hidden opacity-0 transition-all duration-250 group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
             View Tag Archive <ArrowRight class="fill-current w-4 h-4" />
           </div>
         </a>
