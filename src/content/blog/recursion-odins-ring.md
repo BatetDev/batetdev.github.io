@@ -69,7 +69,7 @@ Console logs:
 💎 Jeweler: 'I need the rough gem first!'
 ⛏️ Miner: 'Diamond found!'
 ✨ Jeweler: 'Cutting complete!'
-⚒️ Silversmith: 'Setting gem in silver...'
+⚒️ Silversmith: 'Setting gem in silver ring...'
 🔮 Runesmith: 'Infusing runes...'
 👑 Odin receives: enchanted silver ring with cut diamond!
 ```
