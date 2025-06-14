@@ -32,7 +32,7 @@ function craftEnchantedRing(order) {
   // Recursive cases
   if (order === 'create ring') {
     console.log("🔮 Runesmith: 'I need a completed ring first!'");
-    const baseRing = craftEnchantedRing('set gem');
+    const baseRing = craftEnchantedRing('set gem'); // Waits for previous step
 
     console.log("🔮 Runesmith: 'Infusing runes...'");
     return `enchanted ${baseRing}`;
@@ -149,7 +149,9 @@ factorial(4)
 4 * 6 = 24
 ```
 
-## Further Exploration
+## Further Exploration & Final Thoughts
+
+Analogies won’t solve every confusion, but they can make the call stack’s behavior more concrete. If you prefer direct examples, the factorial above or problems like Fibonacci or tree traversal might work better.
 
 For another perspective, this _Towers of Hanoi_ video by Reducible beautifully shows recursion's problem-solving power:
 
