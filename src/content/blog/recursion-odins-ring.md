@@ -42,7 +42,7 @@ function craftEnchantedRing(order) {
     console.log("💍 Silversmith: 'I need a cut gem first!'");
     const gem = craftEnchantedRing('cut gem');
 
-    console.log("⚒️ Silversmith: 'Setting gem in silver...'");
+    console.log("💍 Silversmith: 'Setting gem in silver...'");
     return `silver ring with ${gem}`;
   }
 
@@ -50,14 +50,14 @@ function craftEnchantedRing(order) {
     console.log("💎 Jeweler: 'I need the rough gem first!'");
     const roughGem = craftEnchantedRing('mine gem');
 
-    console.log("✨ Jeweler: 'Cutting complete!'");
+    console.log("💎 Jeweler: 'Cutting complete!'");
     return `cut ${roughGem}`;
   }
 }
 
-console.log("🏰 Odin commands: 'Forge me an enchanted ring!'");
+console.log("👑 Odin commands: 'Forge me an enchanted ring!'");
 const finalRing = craftEnchantedRing('create ring');
-console.log(`🏰 Odin receives: ${finalRing}!`);
+console.log(`👑 Odin receives: ${finalRing}!`);
 ```
 
 Console logs:
@@ -68,7 +68,7 @@ Console logs:
 💍 Silversmith: 'I need a cut gem first!'
 💎 Jeweler: 'I need the rough gem first!'
 ⛏️ Miner: 'Diamond found!'
-✨ Jeweler: 'Cutting complete!'
+💎 Jeweler: 'Cutting complete!'
 ⚒️ Silversmith: 'Setting gem in silver ring...'
 🔮 Runesmith: 'Infusing runes...'
 👑 Odin receives: enchanted silver ring with cut diamond!
