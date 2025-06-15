@@ -2,6 +2,7 @@
 import { marked } from 'marked';
 import siteConfig from '../data/site-config';
 import Button from './Button.astro';
+import { Image } from 'astro:assets';
 
 const hero = siteConfig.hero;
 ---
@@ -12,14 +13,16 @@ const hero = siteConfig.hero;
       {hero.title && <h1 class="text-emerald-300">{hero.title}</h1>}
       {hero.image?.src && (
         <figure>
-          <img
+          <Image
+            src="/hero.jpg"
+            alt="One of Odin's raven on a laptop"
+            width={1200}
+            height={900}
             class="w-full shadow-sm mb-2 border border-emerald-600/60 rounded-md shadow-emerald-600/60 md:rounded-lg"
-            src={hero.image.src}
-            loading="lazy"
+            loading="eager"
             decoding="async"
-            alt={hero.image.alt || ''}
           />
-          {hero.image.caption && <figcaption class="mt-1.5 text-xs">{hero.image.caption}</figcaption>}
+          <figcaption class="mt-1.5 text-xs">Hero image caption</figcaption>
         </figure>
       )}
       {hero.text && <div class="max-w-none prose md:text-lg" set:html={marked.parse(hero.text)} />}
