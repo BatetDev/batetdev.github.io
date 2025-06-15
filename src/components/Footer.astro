@@ -37,6 +37,7 @@ const navLinks = siteConfig.footerNavLinks || [];
                   target="_blank"
                   rel="noopener noreferrer"
                   title={link.text}
+                  aria-label={`Visit my ${link.text} profile`}
                 >
                   {Icon ? <Icon class="w-8 h-8 md:w-10 md:h-10" /> : link.text}
                 </a>
