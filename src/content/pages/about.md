@@ -8,7 +8,7 @@ seo:
     alt: Fran Batet at a computer
 ---
 
-![Fran Batet](/about.jpeg)
+<!-- ![Fran Batet](/about.jpeg) -->
 
 Hi, I’m **Fran Batet**—an aspiring full stack web developer sharing my learning journey and projects here at echo_PATH.
 
