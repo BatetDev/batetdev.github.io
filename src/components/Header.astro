@@ -2,14 +2,14 @@
 import siteConfig from '../data/site-config';
 ---
 
-<header class="w-full max-w-3xl mx-auto mb-6 mt-3 py-6 md:py-8 bg-zinc-950 text-center rounded-lg glow-border">
+<header class="w-full max-w-3xl mx-auto mb-6 mt-3 py-4 md:py-6 bg-zinc-950 text-center rounded-lg glow-border">
   {
     siteConfig.logo && siteConfig.logo?.src ? (
       <a href="/">
         <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12" />
       </a>
     ) : (
-      <a class="text-4xl md:text-6xl tracking-wide text-emerald-300 glow-text" href="/">
+      <a class="text-4xl md:text-5xl tracking-wide text-emerald-300 glow-text" href="/">
         {siteConfig.title}
       </a>
     )
