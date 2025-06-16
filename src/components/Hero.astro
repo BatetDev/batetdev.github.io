@@ -22,7 +22,7 @@ const hero = siteConfig.hero;
             loading="eager"
             decoding="async"
           />
-          <figcaption class="mt-1.5 text-xs">Hero image caption</figcaption>
+          <figcaption class="mt-1.5 text-xs" />
         </figure>
       )}
       {hero.text && <div class="max-w-none prose md:text-lg" set:html={marked.parse(hero.text)} />}
