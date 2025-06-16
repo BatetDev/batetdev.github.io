@@ -7,7 +7,7 @@ import { Menu, X } from '@lucide/astro';
 const navLinks = siteConfig.headerNavLinks || [];
 ---
 
-<nav class="w-full min-h-16 p-4 bg-zinc-950/80 backdrop-blur-xs mb-6 border-b-2 border-emerald-500/50 fixed -top-0.5 left-0 right-0 z-50">
+<nav class="w-full min-h-16 p-4 md:p-5 bg-zinc-950/80 backdrop-blur-xs mb-6 border-b-2 border-emerald-500/50 fixed -top-0.5 left-0 right-0 z-50">
   {
     navLinks.length > 0 && (
       <div class="w-full md:max-w-3xl md:mx-auto relative px-4">
@@ -37,18 +37,18 @@ const navLinks = siteConfig.headerNavLinks || [];
         <!-- Menu Items -->
         <ul
   id="menu-items"
-  class="menu list-none md:flex md:justify-center md:gap-16 gap-6 justify-start items-center text-gray-200
-         max-[767px]:flex max-[767px]:flex-col max-[767px]:gap-6 max-[767px]:fixed max-[767px]:inset-0 
+  class="menu list-none md:flex md:justify-center md:gap-16 gap-8 justify-start items-center text-gray-200
+         max-[767px]:flex max-[767px]:flex-col max-[767px]:gap-10 max-[767px]:fixed max-[767px]:inset-0 
          max-[767px]:justify-center max-[767px]:items-center max-[767px]:bg-zinc-950/95 
          max-[767px]:z-40 max-[767px]:w-screen max-[767px]:h-screen max-[767px]:px-4 max-[767px]:py-4
-         max-[767px]:transition-all max-[767px]:duration-200 max-[767px]:ease-in-out
+         max-[767px]:transition-all max-[767px]:duration-250 max-[767px]:ease-in-out
          max-[767px]:opacity-0 max-[767px]:pointer-events-none"
 >
   {navLinks.map((link) => (
-    <li class="py-2 md:py-3">
+    <li class="py-2">
       <NavLink
         href={link.href}
-        class="text-xl md:text-2xl font-accent tracking-wide text-gray-200 cursor-pointer decoration-0 transition-all duration-250 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2"
+        class="text-2xl uppercase font-accent tracking-wide text-gray-200 cursor-pointer decoration-0 transition-all duration-250 hover:text-emerald-400 hover:underline hover:underline-offset-4 hover:decoration-2"
       >
         {link.text}
       </NavLink>

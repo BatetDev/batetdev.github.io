@@ -53,7 +53,7 @@ const { Content } = await render(post);
     <div class="mt-8 flex flex-wrap items-center gap-6 text-sm justify-between">
       {
         tags.length > 0 && (
-          <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm md:text-base font-code font-semibold tracking-wide">
+          <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm md:text-base font-code font-semibold tracking-wide mb-4">
             {tags.map((tag) => (
               <a
                 class="hover:text-emerald-300 hover:underline hover:decoration-2 hover:underline-offset-2 transition-all duration-250 bg-zinc-900 hover:bg-zinc-800 rounded-full px-3 py-2.5"
@@ -65,7 +65,7 @@ const { Content } = await render(post);
           </div>
         )
       }
-      <Button class="copy-url-button" aria-label="Copy link" data-url={href} data-tooltip-default="Copy link" data-tooltip-success="Copied">Share</Button>
+      <Button class="ml-auto" aria-label="Copy link" data-url={href} data-tooltip-default="Copy link" data-tooltip-success="Copied">Share</Button>
     </div>
   </article>
   {
