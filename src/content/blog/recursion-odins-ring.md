@@ -112,7 +112,8 @@ Initial Order: "create enchanted ring"
 ⛏️ Miner | 💎 Jeweler | 💍 Silversmith | 🔮 Runesmith | 👑 Odin
 ```
 
-3. Value Transformation
+3. Value Transformation:
+
    Materials evolve through each return phase:
 
 ```bash
