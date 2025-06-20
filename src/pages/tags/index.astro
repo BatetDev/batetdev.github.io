@@ -29,7 +29,7 @@ const tags = getAllTags(posts).sort((a, b) => a.name.localeCompare(b.name));
             href={`/tags/${tag.id}`}
           >
             <div class="grow">
-              <h2 class="text-base md:text-lg group-hover:underline group-hover:underline-offset-4 group-hover:text-emerald-300 transition-all duration-250 ease-in-out mb-0 leading-none tracking-tight md:tracking-normal">
+              <h2 class="text-base md:text-lg group-hover:underline group-hover:underline-offset-4 group-hover:text-emerald-300 transition-all duration-250 ease-in-out mb-0 leading-none tracking-tighter md:tracking-normal">
                 {tag.name}
               </h2>
               <div class="mt-1.5 leading-none tracking-wide">
