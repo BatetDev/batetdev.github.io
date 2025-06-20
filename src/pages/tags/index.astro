@@ -9,12 +9,8 @@ const blogPosts = await getCollection('blog');
 const projectPosts = await getCollection('projects');
 const posts = [...blogPosts, ...projectPosts].sort(sortItemsByDateDesc);
 
-// Aggregate tags from all posts
-const tags = getAllTags(posts).sort((tagA, tagB) => {
-  const postCountTagA = getPostsByTag(posts, tagA.id).length;
-  const postCountTagB = getPostsByTag(posts, tagB.id).length;
-  return postCountTagB - postCountTagA;
-});
+// Aggregate tags from all posts, sorted alphabetically
+const tags = getAllTags(posts).sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <BaseLayout
