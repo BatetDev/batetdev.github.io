@@ -27,7 +27,7 @@ const navLinks = siteConfig.footerNavLinks || [];
     <div class="flex flex-col gap-6 md:gap-8 justify-between items-center">
       {
         socialLinks.length > 0 && (
-          <div class="flex flex-wrap gap-x-12 gap-y-1 justify-center mt-2">
+          <div class="flex flex-wrap gap-x-12 gap-y-1 justify-center mt-3">
             {socialLinks.map((link) => {
               const Icon = iconMap[link.text as keyof typeof iconMap];
               return (
@@ -39,7 +39,7 @@ const navLinks = siteConfig.footerNavLinks || [];
                   title={link.text}
                   aria-label={`Visit my ${link.text} profile`}
                 >
-                  {Icon ? <Icon class="w-8 h-8 md:w-9 md:h-9" /> : link.text}
+                  {Icon ? <Icon class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" /> : link.text}
                 </a>
               );
             })}
