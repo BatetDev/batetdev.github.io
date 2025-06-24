@@ -1,6 +1,6 @@
 ---
 title: 'Eldritch Forecast: A Cosmic Horror Weather App'
-description: 'A vintage-styled weather app with a touch of Cosmic Horror.'
+description: 'A vintage-styled weather app with a touch of Cosmic Horror. Built with JavaScript, Tailwind CSS, and the Visual Crossing Weather API, it features async data fetching, custom icon mapping, and atmospheric horror-themed descriptions for each forecast.'
 publishDate: 'Jun 03 2025'
 seo:
   image:
