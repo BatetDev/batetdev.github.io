@@ -3,9 +3,9 @@ title: "Odin's Ring: A Norse Analogy for JavaScript Recursion"
 excerpt: While working through recursion in The Odin Project's JavaScript course, I found analogies particularly helpful for grasping the call stack. One that stuck with me imagines mythic Norse dwarves crafting an enchanted ring for Odin—where each artisan must wait for the previous one to finish before adding their contribution. It's not the only way to understand recursion, but this mythological perspective helped visualize the 'waiting chain' of function calls. Here's how the analogy maps to code.
 publishDate: 'Jun 12 2025'
 tags:
-  - JavaScript
-  - Recursion
-  - Guide
+  - javaScript
+  - recursion
+  - guide
   - the-odin-project
 seo:
   image:
