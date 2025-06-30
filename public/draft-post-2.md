@@ -118,3 +118,70 @@ Interactive Challenges: "Implement a stack using arrays."
 Cheat Sheets: Big-O summary, structure comparison.
 
 Reader Q&A: Address pain points in comments.
+
+---
+
+Sections:
+Introduction (What’s an Array?)
+
+Definition: Ordered list of elements.
+
+Real-world analogy (numbered shelves, playlist tracks).
+
+Basic syntax (JavaScript/Python examples).
+
+Key Properties
+
+Indexing (0-based), length.
+
+Homogeneous vs. heterogeneous arrays.
+
+The 4 Core Operations (Main Focus)
+A. Reading
+
+Access by index (arr[2]).
+
+Performance: O(1) → Instant.
+
+B. Searching
+
+Find index of a value (indexOf()).
+
+Performance: O(n) → Linear scan.
+
+C. Insertion
+
+End (push()): O(1).
+
+Middle (splice()): O(n) (shifting elements).
+
+D. Deletion
+
+End (pop()): O(1).
+
+Middle (splice()): O(n) (shifting elements).
+
+When to Use Arrays
+
+Pros: Fast access by index, ordered data.
+
+Cons: Slow searches/insertions in middle.
+
+Common Pitfalls
+
+Off-by-one errors.
+
+Sparse arrays (undefined gaps).
+
+What’s Next?
+
+Preview: "Sets: Unique Collections".
+
+Extras (Optional):
+Diagram: ASCII array with indices.
+
+Code Snippet: Interactive example (e.g., JSFiddle).
+
+Exercise: "Reverse an array in-place."
+
+Word Count Target: ~800-1,200 words.
