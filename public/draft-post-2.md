@@ -32,7 +32,7 @@ https://chat.deepseek.com/a/chat/s/2e48d81e-c021-491a-b100-cb5e84c00516
 
 - Access by index (`arr[2]`)
 - Why it’s instant
-- TODO: list all future updates
+- TODO: list all future updates for blog posts
 
 ### **B. Searching (O(n))**
 
