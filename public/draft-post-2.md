@@ -89,4 +89,4 @@ https://chat.deepseek.com/a/chat/s/2e48d81e-c021-491a-b100-cb5e84c00516
 - **Interactive Demo**: [JSFiddle link]
 - **Cheat Sheet**: Big-O summary table
 
-**Word Count**: ~800-1,200
+**Word Count**: ~800-1,500
