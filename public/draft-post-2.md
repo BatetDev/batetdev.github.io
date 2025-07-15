@@ -1,6 +1,6 @@
 ---
 title: 'Coming Soon (regarding arrays)'
-publishDate: June 30, 2025
+publishDate: July 30, 2025
 draft: true
 ---
 
